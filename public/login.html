@@ -47,12 +47,24 @@
 
   function autenticarLogin(){
     let email = ipt_email.value;
-    
-    if(!email.includes('@') || !email.includes('.')){
-      div_msg_email.innerHTML = `<p style='color:red; font-size: 10px'>Digite um e-mail válido</p>`
-    }else{
-      div_msg_email.innerHTML = ``
+    let senha = ipt_senha.value;
 
+    if (!email.includes('@') || !email.includes('.')) {
+      div_msg_email.innerHTML = `<p style='color:red; font-size: 10px'>Digite um e-mail válido</p>`
+    } else {
+      div_msg_email.innerHTML = ``
+    }
+
+
+    if (senha.length <= 8) {
+      div_msg_senha.innerHTML = `<p style='color:red; font-size: 10px'>A senha deve ter mais de 8 caracteres</p>`
+    }
+    else if (senha == senha.toLowerCase()) {
+      div_msg_senha.innerHTML = `<p style='color:red; font-size: 10px'>A senha deve ter ao menos uma letra maiúscula</p>`
+    }
+    else {
+      div_msg_email.innerHTML = ``;
+      alert('Cadastro realizado com sucesso')
     }
   }
 </script>
