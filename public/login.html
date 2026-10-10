@@ -31,6 +31,7 @@
           <img src="assets/icons/lock.svg" alt="">
           <input type="password" placeholder="*******************" id="ipt_senha">
         </div>
+        <div id="div_msg_senha" ></div>
 
         <button onclick="autenticarLogin()">Login</button>
 
@@ -47,12 +48,38 @@
 
   function autenticarLogin(){
     let email = ipt_email.value;
-    
+    let senha = ipt_senha.value;
+
+    let emailValido = true;
+    let senhaValida  = true;
+
     if(!email.includes('@') || !email.includes('.')){
       div_msg_email.innerHTML = `<p style='color:red; font-size: 10px'>Digite um e-mail válido</p>`
+    
+      emailValido = false; 
+    
+
     }else{
       div_msg_email.innerHTML = ``
-
     }
+
+    if (senha.lenght <= 8) {
+      div_msg_senha.innerHTML = `<p style="color:red; front-size:10px"> A senha deve ter mais de 8 caracteres<p>`
+    senhaValida = false;
+      }
+      else if (senha == senha.toLowerCase()) {
+        div_msg_senha.innerHTML = `<p style="color:red; font-size:10px">A senha deve ter ao menos uma letra maiúscula</p>`;
+      senhaValida = false;
+      }
+      else {
+        div_msg_senha.innerHTML = ``;
+      }
+
+      if (emailValido && senhaValida) {
+        alert('Validações concluídas');
+      }
+
+
+
   }
 </script>
