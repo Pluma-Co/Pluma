@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <title>Pluma | Cadastro</title>
 
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
   <div class="container">
@@ -23,36 +25,99 @@
 
         <div class="campo">
           <img src="assets/icons/circle-user.svg" alt="">
-          <input type="text" placeholder="Nome Completo">
+          <input type="text" placeholder="Nome Completo" id="ipt_nome">
         </div>
+        <div id="div_msg_nome"></div>
 
         <div class="campo">
           <img src="assets/icons/mail.svg" alt="">
           <input type="text" placeholder="seu@email.com" id="ipt_email">
         </div>
+        <div id="div_msg_email"></div>
 
         <div class="campo">
           <img src="assets/icons/lock.svg" alt="">
-          <input type="password" placeholder="Senha">
+          <input type="password" placeholder="Senha" id="ipt_senha">
         </div>
+        <div id="div_msg_senha"></div>
 
         <div class="campo">
           <img src="assets/icons/lock.svg" alt="">
-          <input type="password" placeholder="Confirme a Senha">
+          <input type="password" placeholder="Confirme a Senha" id="ipt_confirmacao">
         </div>
+        <div id="div_msg_confirmacao"></div>
 
-        <button onclick="cadastrar()">Login</button>
+        <button onclick="cadastrar()">Cadastrar</button>
       </div>
     </div>
-
   </div>
 
 </body>
+
 </html>
 
 <script>
 
-  function cadastrar(){
+  function cadastrar() {
+    let nome = ipt_nome.value;
+    let email = ipt_email.value;
+    let senha = ipt_senha.value;
+    let confirmacao = ipt_confirmacao.value;
+
+    let nomeValido = true;
+    let emailValido = true;
+    let senhaValida = true;
+    let confirmacaoValida = true;
+
+    // validar nome
+    if (nome.length == 0) {
+      div_msg_nome.innerHTML = `<p style="color:red; font-size:10px">Digite seu nome completo</p>`;
+      nomeValido = false;
+    }
+    else {
+      div_msg_nome.innerHTML = ``;
+    }
+
+    // validar e-mail
+    if (!email.includes('@') || !email.includes('.')) {
+      div_msg_email.innerHTML = `<p style="color:red; font-size:10px">Digite um e-mail válido</p>`;
+
+      emailValido = false;
+
+    } else {
+      div_msg_email.innerHTML = ``;
+    }
+
+    // validar senha
+    if (senha.length <= 8) {
+      div_msg_senha.innerHTML = `<p style="color:red; font-size:10px">A senha deve ter mais de 8 caracteres</p>`;
+      senhaValida = false;
+
+    } else if (senha == senha.toLowerCase()) {
+      div_msg_senha.innerHTML = `<p style="color:red; font-size:10px">A senha deve ter ao menos uma letra maiúscula</p>`;
+
+      senhaValida = false;
+    }
+    else {
+      div_msg_senha.innerHTML = ``;
+    }
+
+    // validar confirmacao de senha 
+    if (confirmacao != senha || confirmacao.length == 0) {
+      div_msg_confirmacao.innerHTML = `<p style="color:red; font-size:10px">As senhas não coincidem</p>`;
+      confirmacaoValida = false;
+    }
+    else {
+      div_msg_confirmacao.innerHTML = ``; 
+    }
     
+    // verificar se todas validações passaram
+
+
+    if (nomeValido && emailValido && senhaValida && confirmacaoValida) {
+      alert('Cadastro Validado com Sucesso!')
+
+    }
+
   }
 </script>
