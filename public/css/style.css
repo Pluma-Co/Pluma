@@ -7,20 +7,561 @@
 body {
   font-family: "Poppins", sans-serif;
   color: #333333;
+  background-color: #f5f5f2;
 }
 
-/* Container principal: coloca os dois lados lado a lado */
+.main-index {
+  width: 100%;
+}
+
+
+/* =========================================================
+   HEADER / NAVBAR
+========================================================= */
+
+nav {
+  height: 90px;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  padding: 0 80px;
+
+  background-color: #04201d;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+}
+
+.logonav {
+  width: 145px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.iconenav {
+  width: 25px;
+  height: 25px;
+}
+
+.nav-item a {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.btn_nav {
+  background-color: #eeeeeb;
+  color: #142522;
+
+  padding: 8px 22px;
+
+  border-radius: 5px;
+  border: none;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   HERO / PRIMEIRA SEÇÃO
+========================================================= */
+
+.hero {
+  height: 590px;
+
+  display: flex;
+  align-items: center;
+
+  background-image:
+    linear-gradient(
+      90deg,
+      #102522 0%,
+      rgba(16, 37, 34, 0.98) 28%,
+      rgba(16, 37, 34, 0.80) 45%,
+      rgba(16, 37, 34, 0.35) 65%,
+      rgba(16, 37, 34, 0.05) 100%
+    ),
+    url("../assets/banner_principal.png");
+
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-conteudo {
+  width: 520px;
+  margin-left: 80px;
+}
+
+.hero-tag {
+  display: inline-block;
+
+  background-color: #78935b;
+  color: white;
+
+  padding: 6px 14px;
+
+  border-radius: 20px;
+
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.hero-titulo {
+  margin-top: 20px;
+
+  color: white;
+
+  font-size: 48px;
+  line-height: 1.2;
+
+  font-weight: 700;
+}
+
+.hero-titulo span {
+  color: #c7d99a;
+}
+
+.hero-texto {
+  margin-top: 40px;
+
+  color: white;
+
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.btn-simulacao {
+  margin-top: 40px;
+
+  width: 320px;
+  height: 45px;
+
+  background-color: #78935b;
+  color: white;
+
+  border: none;
+  border-radius: 25px;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   SEÇÃO DE INFORMAÇÕES
+========================================================= */
+
+.informacoes {
+  padding: 70px 80px;
+
+  background-color: #f5f5f2;
+}
+
+.titulo-informacoes {
+  color: #36563f;
+
+  font-size: 42px;
+  line-height: 1.2;
+  font-weight: 700;
+
+  margin-bottom: 40px;
+}
+
+
+/* =========================================================
+   CARDS DAS INFORMAÇÕES
+========================================================= */
+
+.cards-informacoes {
+  display: flex;
+  justify-content: space-between;
+
+  gap: 25px;
+}
+
+.card-info {
+  width: 32%;
+
+  background-color: white;
+
+  padding: 12px;
+
+  border-radius: 15px;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+}
+
+.numero-card {
+  color: #16382f;
+
+  font-size: 18px;
+  font-weight: 700;
+
+  margin-bottom: 7px;
+}
+
+.imagem-card {
+  width: 100%;
+  height: 210px;
+
+  object-fit: cover;
+
+  border-radius: 10px;
+}
+
+.conteudo-card {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 10px;
+}
+
+.icone-card {
+  width: 50px;
+  height: 50px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background-color: #dce9dc;
+
+  font-size: 24px;
+}
+
+.texto-card {
+  flex: 1;
+}
+
+.conteudo-card h3 {
+  color: #36563f;
+
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.conteudo-card p {
+  color: #777777;
+
+  font-size: 13px;
+}
+
+.seta-card {
+  width: 30px;
+  height: 30px;
+
+  flex-shrink: 0;
+
+  margin-left: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background-color: #777777;
+  color: white;
+
+  font-size: 18px;
+}
+
+
+/* =========================================================
+   FLUXO
+========================================================= */
+
+.fluxo {
+  min-height: 220px;
+
+  margin-top: 35px;
+  padding: 30px;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  background-color: #dde5e0;
+
+  border-radius: 15px;
+}
+
+.item-fluxo {
+  width: 200px;
+
+  text-align: center;
+}
+
+.item-fluxo img {
+  width: 110px;
+  height: 110px;
+
+  object-fit: cover;
+
+  margin-bottom: 15px;
+}
+
+.item-fluxo h3 {
+  color: #36563f;
+
+  font-size: 17px;
+
+  margin-bottom: 5px;
+}
+
+.item-fluxo p {
+  color: #777777;
+
+  font-size: 12px;
+}
+
+.seta-fluxo {
+  color: #36563f;
+
+  font-size: 32px;
+
+  font-weight: 300;
+}
+
+
+/* =========================================================
+   CALCULADORA
+========================================================= */
+
+.calculadora {
+  width: 86%;
+  min-height: 600px;
+
+  margin: 100px auto;
+
+  display: flex;
+
+  background-color: white;
+
+  border-radius: 20px;
+
+  overflow: hidden;
+}
+
+.calculadora-esquerda {
+  width: 50%;
+
+  padding: 55px;
+
+  background-color: #102522;
+}
+
+.calculadora-direita {
+  width: 50%;
+
+  padding: 55px;
+
+  background-color: white;
+}
+
+.calculadora-tag {
+  display: block;
+
+  width: 250px;
+
+  padding: 7px;
+
+  text-align: center;
+
+  background-color: #78935b;
+  color: white;
+
+  border-radius: 20px;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.calculadora-esquerda h2 {
+  margin-top: 30px;
+
+  color: white;
+
+  font-size: 31px;
+  line-height: 1.25;
+}
+
+.calculadora-esquerda h2 span {
+  color: #c7df72;
+}
+
+
+/* =========================================================
+   QUEM SOMOS
+========================================================= */
+
+.sobre-nos {
+  width: 100%;
+  min-height: 370px;
+
+  display: flex;
+
+  background-color: #06241d;
+}
+
+.sobre-imagem {
+  width: 43%;
+}
+
+.sobre-imagem img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.sobre-conteudo {
+  width: 57%;
+
+  padding: 40px 70px;
+
+  color: white;
+}
+
+.sobre-conteudo h2 {
+  margin-bottom: 10px;
+
+  text-align: center;
+
+  font-size: 42px;
+}
+
+.sobre-conteudo hr {
+  margin-bottom: 30px;
+
+  border: none;
+  border-top: 1px solid #aaaaaa;
+}
+
+.sobre-conteudo p {
+  margin-bottom: 20px;
+
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   SUSTENTABILIDADE
+========================================================= */
+
+.sustentabilidade {
+  padding: 60px 80px 120px;
+
+  background-color: white;
+}
+
+.sustentabilidade h2 {
+  margin-bottom: 45px;
+
+  color: #36563f;
+
+  font-size: 40px;
+  line-height: 1.2;
+}
+
+.cards-ods {
+  display: flex;
+  justify-content: space-between;
+
+  gap: 60px;
+}
+
+.card-ods {
+  width: 23%;
+
+  padding: 20px;
+
+  background-color: white;
+
+  border-radius: 12px;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+
+  text-align: center;
+}
+
+.card-ods img {
+  width: 100%;
+
+  border-radius: 10px;
+}
+
+.card-ods h3 {
+  margin: 18px 0 10px;
+
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.card-ods p {
+  color: #333333;
+
+  font-size: 12px;
+  line-height: 1.2;
+}
+
+
+/* Cor do texto de cada ODS */
+
+.ods7 {
+  color: #e8ad32;
+}
+
+.ods9 {
+  color: #d76c3a;
+}
+
+.ods11 {
+  color: #e39b32;
+}
+
+.ods13 {
+  color: #54864d;
+}
+
+
+/* =========================================================
+   LOGIN E CADASTRO
+   Mantemos porque login.html e cadastro.html usam esse CSS
+========================================================= */
+
 .container {
   display: flex;
   height: 100vh;
 }
 
-/* ---------- Lado esquerdo ---------- */
 .lado-esquerdo {
   width: 50%;
+
   display: flex;
-  justify-content: center; 
-  align-items: center;     
+  justify-content: center;
+  align-items: center;
+
   background: linear-gradient(#04201d, #133830);
 }
 
@@ -28,19 +569,22 @@ body {
   width: 440px;
 }
 
-/* ---------- Lado direito ---------- */
 .lado-direito {
   width: 50%;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
   background: linear-gradient(135deg, #ffffff, #c9c9c9);
 }
 
 .formulario {
   width: 340px;
+
   display: flex;
-  flex-direction: column; /* itens um embaixo do outro */
+  flex-direction: column;
+
   text-align: center;
 }
 
@@ -50,53 +594,65 @@ body {
 }
 
 .formulario p {
-  font-size: 14px;
   margin-bottom: 30px;
+
+  font-size: 14px;
 }
 
-
 .campo {
+  height: 40px;
+
+  margin-bottom: 10px;
+  padding: 0 15px;
+
   display: flex;
   align-items: center;
-  height: 40px;
-  padding: 0 15px;
-  margin-bottom: 10px;
+
   background-color: white;
+
   border-radius: 4px;
 }
 
 .campo img {
   width: 16px;
+
   margin-right: 10px;
 }
 
-.campo input {    
+.campo input {
   border: none;
-  outline: none; /* remove a borda quando selecionado */
+  outline: none;
+
   font-size: 12px;
 }
 
-/* ---------- Botão ---------- */
-button {
+.button-form {
   height: 30px;
+
   border: none;
   border-radius: 4px;
+
   background-color: #16382f;
   color: white;
+
   font-size: 12px;
   font-weight: 600;
+
   cursor: pointer;
 }
 
 .esqueceu {
   margin-top: 25px;
-  font-size: 12px;
+
   color: #555555;
+
+  font-size: 12px;
+
   text-decoration: none;
 }
 
-.esqueceu:hover{
-
+.esqueceu:hover {
   color: #133830;
+
   font-weight: 600;
 }
