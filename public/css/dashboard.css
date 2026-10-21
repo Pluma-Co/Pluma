@@ -1,0 +1,224 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: poppins;
+}
+
+header {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding-top: 15px;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+}
+
+#logo_header {
+    width: 250px;
+    height: 125px;
+}
+
+#sidebar {
+    width: 100px;
+    height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+}
+
+.li_icons {
+    list-style-type: none;
+    padding: 20px 0px;
+}
+
+.sidebar_icons {
+    width: 40px;
+}
+
+#div_titulo {
+    height: 70px;
+    width: calc(100vw - 100px);
+    display: flex;
+    align-items: center;
+    padding-left: 50px;
+}
+
+#titulo {
+    color: #235347;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+#div_dashboard {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+
+#div_filtro {
+    color: #739086;
+    width: 40vw;
+    height: 30vh;
+}
+
+.btn_filtro {
+    background-color: #ffffff;
+    font-weight: 500;
+    border-radius: 100px;
+    width: 150px;
+    height: 28px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+#div_filtroData {
+    display: flex;
+    justify-content: left;
+}
+
+#div_kpi2 {
+    border: 1px solid;
+    width: 34vw;
+    height: 38vh;
+    background-color: #164636;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.div_dados {
+    color: #739086;
+    background-color: #ffffff;
+    width: 45%;
+    height: 90%;
+    border-radius: 15px;
+    padding: 15px 20px;
+}
+
+.titulo_kpi {
+    font-size: 18px;
+    font-weight: light;
+    text-align: center;
+}
+
+.topico_kpi {
+    font-size: 15px;
+    font-weight: bold;
+    color: #739086
+}
+
+.dado_kpi {
+    font-weight: bold;
+    text-align: center;
+}
+
+.barra_vazamento {
+    width: 75%;
+    height: 18px;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+.div_kpiVazamento {
+    display: flex;
+    flex-direction: row;
+    padding-top: 10px;
+}
+
+.div_vazamento {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#dado_kpi {
+    color: #164636;
+    font-size: 35px;
+    font-weight: bolder;
+    margin: -8px 0px;
+}
+
+#icon_vazamento {
+    background-image: url(../src/icon_vazamento.png);
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+
+}
+
+#div_kpiInterna {
+    width: calc(50% - 50px);
+}
+
+#espacador{
+    width: 100px;
+    height: 100px;
+}
+
+#div_perdas {
+    display: flex;
+    flex-direction: row;
+    margin-top: 15px;
+    border: 1px solid black;
+    border-radius: 20px;
+    height: 50%;
+}
+
+#div_sensores{
+    display: flex;
+    flex-direction: row;
+}
+
+#div_grafico{
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 20px;
+    width: calc(55vw - 100px);
+}
+
+#div_ultimosVazamentos{
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 20px;
+    width: calc(40.5vw - 100px);
+}
+
+#div_rotulos{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#circulo_status{
+    width: 20px;
+    height: 20px;
+    background-color: #164636;
+    border-radius: 100%;
+}
+
+.rotulos{
+    display: flex;
+    flex-direction: column;
+}
+
+#id_dado{
+    display: flex;
+    flex-direction: row;
+}
+
+.dados_vazamento{
+    border: solid 1px;
+    border-radius: 15px ;
+    margin: 15px;
+    padding: 30px 15px;
+}

@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <header>
+    <div id="div_logo">
+      <img src="assets/logo_verde.png" alt="" id="logo_header" />
+    </div>
+  </header>
+  <main>
+    <div id="sidebar">
+      <ul>
+        <a href="">
+          <li class="li_icons">
+            <img src="assets/icons/dashboard.svg" class="sidebar_icons" />
+          </li>
+        </a>
+        <a href="">
+          <li class="li_icons">
+            <img src="assets/icons/calculator.svg" class="sidebar_icons" />
+          </li>
+        </a>
+        <a href="">
+          <li class="li_icons">
+            <img src="assets/icons/configurations.svg" class="sidebar_icons" />
+          </li>
+        </a>
+        <a href="">
+          <li class="li_icons">
+            <img src="assets/icons/home.svg" class="sidebar_icons" />
+          </li>
+        </a>
+      </ul>
+    </div>
+    <div id="div_site">
+      <div id="div_titulo">
+        <p id="titulo">Monitoramento de vazamentos</p>
+      </div>
+      <div id="div_dashboard">
+        <div>
+          <div id="div_filtro">
+            <div id="div_filtroData">
+              <button id="btn_hoje" class="btn_filtro">
+                <p>Hoje</p>
+              </button><button id="btn_semana" class="btn_filtro">
+                <p>Esta semana</p>
+              </button><button id="btn_mes" class="btn_filtro">
+                <p>Últimos 30 dias</p>
+              </button>
+            </div>
+            <div class="div_kpiVazamento">
+              <div id="div_kpiInterna" style="padding-left: 5%;">
+                <p class="titulo_kpi" style="text-align: left;">Vazamentos</p>
+                <p id="dado_kpi">27</p>
+                <p><span style="color: red; font-weight: bold;">+5%</span> do periodo anterior</p>
+              </div>
+              <div id="icon_vazamento"></div>
+              <div id="div_kpiInterna" style="padding-left: 5%;">
+                <p class="titulo_kpi" style="text-align: left;">Perda estimada</p>
+                <p id="dado_kpi">R$ 8420.00</p>
+                <p><span style="font-weight: bold; color: #B4FF9A;">⬊-8%</span> do periodo anterior</p>
+              </div>
+            </div>
+            <div id="div_perdas">
+              <div id="div_kpiInterna" style="padding-left: 5%;">
+                <p class="titulo_kpi" style="text-align: left; padding-top: 5%;">
+                  Gás perdido
+                </p>
+                <p id="dado_kpi">
+                  184 m³
+                </p>
+                <p><span style="font-weight: bold; color: #B4FF9A;">⬊-8%</span> do periodo anterior</p>
+              </div>
+              <div id="espacador"></div>
+              <div id="div_kpiInterna" style="padding-left: 5%;">
+                <p class="titulo_kpi" style="text-align: left; padding-top: 5%;">
+                  Duração Total
+                </p>
+                <p id="dado_kpi">
+                  04h32
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="div_kpi2">
+          <div class="div_dados">
+            <p class="titulo_kpi">Vazamento por Local</p>
+            <p class="topico_kpi">Compressor</p>
+            <p class="dado_kpi">12</p>
+            <p class="topico_kpi">Biodigestor</p>
+            <p class="dado_kpi">7</p>
+            <p class="topico_kpi">Purificação</p>
+            <p class="dado_kpi">5</p>
+            <p class="topico_kpi">Armazenamento</p>
+            <p class="dado_kpi">3</p>
+
+          </div>
+          <div class="div_dados">
+            <p class="titulo_kpi">Perda Financeira</p>
+            <p class="topico_kpi">Compressor</p>
+            <p class="dado_kpi" style="color: #ff888a;">R$ 3.250</p>
+            <p class="topico_kpi">Biodigestor</p>
+            <p class="dado_kpi" style="color: #ff888a;">R$ 2.180</p>
+            <p class="topico_kpi">Purificação</p>
+            <p class="dado_kpi" style="color: #ff888a;">R$ 1.740</p>
+            <p class="topico_kpi">Armazenamento</p>
+            <p class="dado_kpi" style="color: #ff888a;">R$ 1.250</p>
+          </div>
+        </div>
+      </div>
+      <div id="div_sensores" style="padding-left: 4.5%;">
+        <div id="div_grafico">
+          <p class="titulo_kpi" style="text-align: center; color: #235347;">Vazamentos</p>
+          <canvas id="grafico_linha" style="margin: 25px;">
+          </canvas>
+        </div>
+        <div id="div_ultimosVazamentos">
+          <p class="titulo_kpi" style="text-align: center; color: #235347; margin-top: 10px;">Últimos vazamentos</p>
+          <div class="dados_vazamento">
+            <div id="div_rotulos">
+              <div class="rotulos">
+                <div id="id_dado">
+                  <div id="circulo_status"></div>
+                  <p class="topico_kpi">#127</p>
+                </div>
+                <p class="topico_kpi">Compressor</p>
+              </div>
+              <div class="rotulos">
+                <p class="topico_kpi">Tempo</p>
+                <p class="dado_kpi" style="color: #ff888a;">6 Min</p>
+              </div>
+              <div class="rotulos">
+                <p class="topico_kpi">m³ perdidos</p>
+                <p class="dado_kpi" style="color: #ff888a;">2,8m³</p>
+              </div>
+              <div class="rotulos">
+                <p class="topico_kpi">$ perdido</p>
+                <p class="dado_kpi" style="color: #ff888a;">R$ 128,80</p>
+              </div>
+            </div>
+          </div>
+          <div class="dados_vazamento">
+            <div id="div_rotulos">
+              <div class="rotulos">
+                <div id="id_dado">
+                  <div id="circulo_status"></div>
+                  <p class="topico_kpi">#126</p>
+                </div>
+                <p class="topico_kpi">Purificação</p>
+              </div>
+              <div class="rotulos">
+                <p class="topico_kpi">Tempo</p>
+                <p class="dado_kpi" style="color: #ff888a;">4 Min</p>
+              </div>
+              <div class="rotulos">
+                <p class="topico_kpi">m³ perdidos</p>
+                <p class="dado_kpi" style="color: #ff888a;">1,9m³</p>
+              </div>
+              <div class="rotulos">
+                <p class="topico_kpi">$ perdido</p>
+                <p class="dado_kpi" style="color: #ff888a;">R$ 87,40</p>
+              </div>
+            </div>
+          </div>
+          <div class="dados_vazamento">
+            <div id="div_rotulos">
+              <div class="rotulos">
+                <div id="id_dado">
+                  <div id="circulo_status"></div>
+                  <p class="topico_kpi">#125</p>
+                </div>
+                <p class="topico_kpi">Compressor</p>
+              </div>
+              <div class="rotulos">
+                <p class="topico_kpi">Tempo</p>
+                <p class="dado_kpi" style="color: #ff888a;">9 Min</p>
+              </div>
+              <div class="rotulos">
+                <p class="topico_kpi">m³ perdidos</p>
+                <p class="dado_kpi" style="color: #ff888a;">4,1m³</p>
+              </div>
+              <div class="rotulos">
+                <p class="topico_kpi">$ perdido</p>
+                <p class="dado_kpi" style="color: #ff888a;">R$ 188,60</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+  </main>
+
+  <script>
+    const grafico_linha = document.getElementById("grafico_linha");
+
+    new Chart(grafico_linha, {
+      type: "line",
+      data: {
+        labels: ["jan", "fev", "mar", "Abr", "Maio", "Jun"],
+        datasets: [
+          {
+            label: "Sensor1",
+            data: [96.2, 0, 26.1, 89.5, 98.5, 63.8],
+            borderWidth: 3,
+            backgroundColor: "rgb(112, 110, 231)",
+            borderColor: "rgb(112, 110, 231)",
+          },
+          {
+            label: "Sensor2",
+            data: [31.5, 35.6, 46, 90.2, 90.7, 4.6],
+            borderWidth: 3,
+            backgroundColor: "rgb(85, 196, 174)",
+            borderColor: "rgb(85, 196, 174)",
+          },
+          {
+            label: "Sensor3",
+            data: [88.5, 17.5, 82.4, 58, 26.8, 53.8],
+            borderWidth: 3,
+            backgroundColor: "rgb(255, 146, 138)",
+            borderColor: "rgb(255, 146, 138)",
+          },
+        ],
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true,
+            title: {
+              display: true,
+              text: "Vazamento (m³)"
+            }
+          }
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>
