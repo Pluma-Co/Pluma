@@ -4,8 +4,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
+  <title>DashBoard - Pluma</title>
 
+  <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -25,12 +26,12 @@
   <main>
     <div id="sidebar">
       <ul>
-        <a href="">
+        <a href="dashboard.html">
           <li class="li_icons">
             <img src="assets/icons/dashboard.svg" class="sidebar_icons" />
           </li>
         </a>
-        <a href="">
+        <a href="index.html#calculadora">
           <li class="li_icons">
             <img src="assets/icons/calculator.svg" class="sidebar_icons" />
           </li>
@@ -40,7 +41,7 @@
             <img src="assets/icons/configurations.svg" class="sidebar_icons" />
           </li>
         </a>
-        <a href="">
+        <a href="index.html">
           <li class="li_icons">
             <img src="assets/icons/home.svg" class="sidebar_icons" />
           </li>
@@ -64,36 +65,28 @@
               </button>
             </div>
             <div class="div_kpiVazamento">
-              <div id="div_kpiInterna" style="padding-left: 5%;">
-                <p class="titulo_kpi" style="text-align: left;">Vazamentos</p>
-                <p id="dado_kpi">27</p>
-                <p><span style="color: red; font-weight: bold;">+5%</span> do periodo anterior</p>
+              <div class="div_kpiInterna">
+                <p class="titulo_kpi">Vazamentos</p>
+                <p class="valor_kpi">27</p>
+                <p><span class="alta">+5%</span> do periodo anterior</p>
               </div>
               <div id="icon_vazamento"></div>
-              <div id="div_kpiInterna" style="padding-left: 5%;">
-                <p class="titulo_kpi" style="text-align: left;">Perda estimada</p>
-                <p id="dado_kpi">R$ 8420.00</p>
-                <p><span style="font-weight: bold; color: #B4FF9A;">⬊-8%</span> do periodo anterior</p>
+              <div class="div_kpiInterna">
+                <p class="titulo_kpi">Perda estimada</p>
+                <p class="valor_kpi">R$ 8420.00</p>
+                <p><span class="queda">⬊-8%</span> do periodo anterior</p>
               </div>
             </div>
             <div id="div_perdas">
-              <div id="div_kpiInterna" style="padding-left: 5%;">
-                <p class="titulo_kpi" style="text-align: left; padding-top: 5%;">
-                  Gás perdido
-                </p>
-                <p id="dado_kpi">
-                  184 m³
-                </p>
-                <p><span style="font-weight: bold; color: #B4FF9A;">⬊-8%</span> do periodo anterior</p>
+              <div class="div_kpiInterna">
+                <p class="titulo_kpi">Gás perdido</p>
+                <p class="valor_kpi">184 m³</p>
+                <p><span class="queda">⬊-8%</span> do periodo anterior</p>
               </div>
               <div id="espacador"></div>
-              <div id="div_kpiInterna" style="padding-left: 5%;">
-                <p class="titulo_kpi" style="text-align: left; padding-top: 5%;">
-                  Duração Total
-                </p>
-                <p id="dado_kpi">
-                  04h32
-                </p>
+              <div class="div_kpiInterna">
+                <p class="titulo_kpi">Duração Total</p>
+                <p class="valor_kpi">04h32</p>
               </div>
             </div>
           </div>
@@ -101,15 +94,10 @@
         <div id="div_kpi2">
           <div class="div_dados">
             <p class="titulo_kpi">Vazamento por Local</p>
-            <p class="topico_kpi">Compressor</p>
-            <p class="dado_kpi">12</p>
-            <p class="topico_kpi">Biodigestor</p>
-            <p class="dado_kpi">7</p>
-            <p class="topico_kpi">Purificação</p>
-            <p class="dado_kpi">5</p>
-            <p class="topico_kpi">Armazenamento</p>
-            <p class="dado_kpi">3</p>
-
+            <p class="topico_kpi" style="margin: 15px 0px;">Compressor<span class="dado_kpi">12</span></p>
+            <p class="topico_kpi" style="margin-bottom: 15px;">Biodigestor<span class="dado_kpi">7</span></p>
+            <p class="topico_kpi" style="margin-bottom: 15px;">Purificação <span class="dado_kpi">5</span></p>
+            <p class="topico_kpi" style="margin-bottom: 15px;">Armazenamento<span class="dado_kpi">3</span></p>
           </div>
           <div class="div_dados">
             <p class="titulo_kpi">Perda Financeira</p>
@@ -124,87 +112,84 @@
           </div>
         </div>
       </div>
-      <div id="div_sensores" style="padding-left: 4.5%;">
+      <div id="div_sensores">
         <div id="div_grafico">
-          <p class="titulo_kpi" style="text-align: center; color: #235347;">Vazamentos</p>
-          <canvas id="grafico_linha" style="margin: 25px;">
-          </canvas>
+          <p class="titulo_kpi">Vazamentos</p>
+          <canvas id="grafico_linha"></canvas>
         </div>
         <div id="div_ultimosVazamentos">
-          <p class="titulo_kpi" style="text-align: center; color: #235347; margin-top: 10px;">Últimos vazamentos</p>
+          <p class="titulo_kpi">Últimos vazamentos</p>
           <div class="dados_vazamento">
-            <div id="div_rotulos">
+            <div class="div_rotulos">
               <div class="rotulos">
-                <div id="id_dado">
-                  <div id="circulo_status"></div>
+                <div class="id_dado">
+                  <div class="circulo_status"></div>
                   <p class="topico_kpi">#127</p>
                 </div>
                 <p class="topico_kpi">Compressor</p>
               </div>
               <div class="rotulos">
                 <p class="topico_kpi">Tempo</p>
-                <p class="dado_kpi" style="color: #ff888a;">6 Min</p>
+                <p class="dado_kpi">6 Min</p>
               </div>
               <div class="rotulos">
                 <p class="topico_kpi">m³ perdidos</p>
-                <p class="dado_kpi" style="color: #ff888a;">2,8m³</p>
+                <p class="dado_kpi">2,8m³</p>
               </div>
               <div class="rotulos">
                 <p class="topico_kpi">$ perdido</p>
-                <p class="dado_kpi" style="color: #ff888a;">R$ 128,80</p>
+                <p class="dado_kpi">R$ 128,80</p>
               </div>
             </div>
           </div>
           <div class="dados_vazamento">
-            <div id="div_rotulos">
+            <div class="div_rotulos">
               <div class="rotulos">
-                <div id="id_dado">
-                  <div id="circulo_status"></div>
+                <div class="id_dado">
+                  <div class="circulo_status"></div>
                   <p class="topico_kpi">#126</p>
                 </div>
                 <p class="topico_kpi">Purificação</p>
               </div>
               <div class="rotulos">
                 <p class="topico_kpi">Tempo</p>
-                <p class="dado_kpi" style="color: #ff888a;">4 Min</p>
+                <p class="dado_kpi">4 Min</p>
               </div>
               <div class="rotulos">
                 <p class="topico_kpi">m³ perdidos</p>
-                <p class="dado_kpi" style="color: #ff888a;">1,9m³</p>
+                <p class="dado_kpi">1,9m³</p>
               </div>
               <div class="rotulos">
                 <p class="topico_kpi">$ perdido</p>
-                <p class="dado_kpi" style="color: #ff888a;">R$ 87,40</p>
+                <p class="dado_kpi">R$ 87,40</p>
               </div>
             </div>
           </div>
           <div class="dados_vazamento">
-            <div id="div_rotulos">
+            <div class="div_rotulos">
               <div class="rotulos">
-                <div id="id_dado">
-                  <div id="circulo_status"></div>
+                <div class="id_dado">
+                  <div class="circulo_status"></div>
                   <p class="topico_kpi">#125</p>
                 </div>
                 <p class="topico_kpi">Compressor</p>
               </div>
               <div class="rotulos">
                 <p class="topico_kpi">Tempo</p>
-                <p class="dado_kpi" style="color: #ff888a;">9 Min</p>
+                <p class="dado_kpi">9 Min</p>
               </div>
               <div class="rotulos">
                 <p class="topico_kpi">m³ perdidos</p>
-                <p class="dado_kpi" style="color: #ff888a;">4,1m³</p>
+                <p class="dado_kpi">4,1m³</p>
               </div>
               <div class="rotulos">
                 <p class="topico_kpi">$ perdido</p>
-                <p class="dado_kpi" style="color: #ff888a;">R$ 188,60</p>
+                <p class="dado_kpi">R$ 188,60</p>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    </div>
     </div>
   </main>
 
