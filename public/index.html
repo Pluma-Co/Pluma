@@ -386,43 +386,32 @@
         <!-- CALCULADORA -->
         <section class="calculadora" id="calculadora">
 
+            <h2>
+                Simule e veja o quanto você economiza de verdade.
+            </h2>
 
-            <div class="calculadora-esquerda">
+            <div class="opcoesCalculadora"> <a href=""> Financeiro</a><a href="">Produto</a><a href="">Detalhado</a></div>
 
-
-                <span class="calculadora-tag">
-
-                    CALCULADORA FINANCEIRA
-
-                </span>
-
-
-                <h2>
-
-                    Quanto <span>Metano</span> a sua
-
-                    <br>
-
-                    usina deixa escapar —
-
-                    <br>
-
-                    e o que isso vale em <span>reais</span>
-
-                </h2>
-
-
+            <div class="campoMetano"> 
+                <h4>Metano Produzido por mês(M³)</h4>
+                <h3 id="metanoProduzido"></h3>
+                <hr>
+            
             </div>
 
-
-            <div class="calculadora-direita">
-
-                <!--
-                    Aqui depois iremos montar
-                    os campos da calculadora.
-                -->
-
+            <div class="campoVenda"> 
+                <h4>Valor de venda do m³(R$)</h4>
+                <h3 id="valorVenda">R$ 0,00</h3>
+                <hr>
             </div>
+
+            <div class="campoPerda"> 
+                <h1 id="perdaMetano">Você economiza com o </h1> <img src="assets/icone_perda.png" alt="Ícone de perda de metano">
+            </div>
+                <h4>Perda de metano por mês(M³)</h4>
+                <h3 id="perdaMetano"></h3>
+                <hr>
+           
 
 
         </section>
