@@ -24,10 +24,22 @@
         <p>Cadastre-se e comece<br>agora a gestão da sua usina!</p>
 
         <div class="campo">
+          <img src="assets/icons/icone-usina.svg" alt="">
+          <input type="text" placeholder="Código da Usina" id="ipt_codigo_usina">
+        </div>
+        <div id="div_msg_codigo_usina"></div>
+
+        <div class="campo">
           <img src="assets/icons/circle-user.svg" alt="">
           <input type="text" placeholder="Nome Completo" id="ipt_nome">
         </div>
         <div id="div_msg_nome"></div>
+
+        <div class="campo">
+          <img src="assets/icons/icone_userkey.svg" alt="">
+          <input type="text" placeholder="Nome de usuário" id="ipt_username">
+        </div>
+        <div id="div_msg_username"></div>
 
         <div class="campo">
           <img src="assets/icons/mail.svg" alt="">
@@ -59,15 +71,28 @@
 <script>
 
   function cadastrar() {
+    let codigoUsina = ipt_codigo_usina.value;
     let nome = ipt_nome.value;
+    let username = ipt_username.value
     let email = ipt_email.value;
     let senha = ipt_senha.value;
     let confirmacao = ipt_confirmacao.value;
 
+    let codigoUsinaValido = true;
     let nomeValido = true;
+    let usernameValido = true;
     let emailValido = true;
     let senhaValida = true;
     let confirmacaoValida = true;
+
+
+    // validar usina
+    if (codigoUsina.length == 0) {
+      div_msg_codigo_usina.innerHTML = `<p style="color:red; font-size:10px">Digite o código da usina</p>`;
+      codigoUsinaValido = false;
+    } else {
+      div_msg_codigo_usina.innerHTML = ``;
+    }
 
     // validar nome
     if (nome.length == 0) {
@@ -76,6 +101,14 @@
     }
     else {
       div_msg_nome.innerHTML = ``;
+    }
+
+    // validar username 
+    if (username.length == 0) {
+      div_msg_username.innerHTML = `<p style="color:red; font-size:10px">Digite um nome de usuário</p>`;
+      usernameValido = false;
+    } else {
+      div_msg_username.innerHTML = ``;
     }
 
     // validar e-mail
@@ -108,16 +141,18 @@
       confirmacaoValida = false;
     }
     else {
-      div_msg_confirmacao.innerHTML = ``; 
+      div_msg_confirmacao.innerHTML = ``;
     }
-    
+
     // verificar se todas validações passaram
 
-
-    if (nomeValido && emailValido && senhaValida && confirmacaoValida) {
+    if (codigoUsinaValido && nomeValido && usernameValido && emailValido && senhaValida && confirmacaoValida) {
       alert('Cadastro Validado com Sucesso!')
+      window.location = "login.html"
 
     }
 
   }
+  localStorage.setItem('senha', 'ipt_senha.value');
+
 </script>
