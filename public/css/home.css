@@ -311,3 +311,220 @@ header {
     line-height: 1.5;
     color: #4A5568;
 }
+
+
+/* Calculadora */
+
+.calculadora-section {
+    background-color: #1F4647; 
+    border-radius: 40px;
+    padding: 100px 40px; 
+    width: 95%; 
+    max-width: 1400px;
+    margin: 80px auto; 
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+}
+
+.calculadora-section h2 {
+    text-align: center;
+    font-size: 36px; 
+    font-weight: 700;
+    margin-bottom: 50px;
+}
+
+.topoCalculator {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px); 
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 750px;
+    margin-bottom: 30px;
+    padding: 5px;
+}
+
+.econo-span {
+    color: #42FF00;
+}
+
+.topoCalculator button {
+    background: transparent;
+    border: none;
+    color: #FFFFFF;
+    padding: 12px 20px;
+    flex: 1;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: inherit;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.topoCalculator button:hover,
+.topoCalculator button#financeiro { 
+    background-color: #1F4647;
+}
+
+/* Container dos Cartões */
+.car-calculadora {
+    width: 100%;
+    max-width: 750px; 
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+/* Cartões Individuais */
+.card-metano, 
+.card-venda, 
+.card-resultadoCalculadora {
+    background: rgba(255, 255, 255, 0.05); 
+    backdrop-filter: blur(16px); 
+    -webkit-backdrop-filter: blur(16px); 
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2); 
+    border-radius: 16px;
+    padding: 30px;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.card-metano h4, 
+.card-venda h4 {
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 25px;
+    color: #E2E8F0;
+}
+
+.card-metano input, 
+.card-venda input {
+    background: transparent;
+    border: none;
+    color: #FFFFFF;
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+    width: 200px;
+    outline: none;
+    font-family: inherit;
+}
+
+.card-venda span {
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.card-metano hr, 
+.card-venda hr {
+    border: none;
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.781);
+    width: 200px;
+    margin: 5px auto 0 auto;
+    transition: border-bottom-color 0.9s ease;
+}
+
+.card-metano input:focus + hr, 
+.card-venda input:focus + hr {
+    border-bottom-color: #42FF00; 
+}
+
+.card-resultadoCalculadora {
+    padding: 40px;
+}
+
+.economiza {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    color: #E2E8F0;
+}
+
+.economiza img {
+    height: 20px;
+}
+
+.calculo-resultado {
+    margin: 25px 0;
+}
+
+.resultado-calculadora {
+    color: #42FF00;
+    font-size: 52px;
+    font-weight: 800;
+    margin: 5px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.resultado-calculadora span {
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.calculo-resultado h5 {
+    font-size: 13px;
+    font-weight: 400;
+    color: #CBD5E0;
+    margin-top: 5px;
+}
+
+.card-resultadoCalculadora > hr {
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    margin: 30px 0 20px 0;
+}
+
+.exibir-mensal {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.exibir-mensal h5 {
+    font-size: 13px;
+    font-weight: 400;
+    color: #CBD5E0;
+    margin-bottom: 5px;
+}
+
+.conteudo-metano, 
+.perda-mensal {
+    color: #42FF00 ;
+    font-weight: 700 ;
+    font-size: 15px ;
+}
+
+.contactUs {
+    background-color: #B4FF9A;
+    color: #000000;
+    border: none;
+    border-radius: 30px;
+    padding: 16px 60px;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.contactUs:hover {
+    background-color: #42FF00;
+    transform: scale(1.02);
+}
