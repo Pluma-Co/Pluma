@@ -119,7 +119,7 @@
 
     <!-- CALCULADORA -->
 
-    <section>
+    <section class="calculadora-section" id="simulador">
         <h2>Simule e veja quanto você economiza de verdade.</h2>
         <div class="topoCalculator">
             <button class="finaceiro" id="financeiro">Financeiro</button>
@@ -135,7 +135,7 @@
             </div>
             <div class="card-venda">
                 <h4> Valor de venda do m³(R$)</h4>
-                <input type="text" id="ipt_venda">
+                <span>R$</span> <input type="text" id="ipt_venda">
                 <hr>
             </div>
             <div class="card-resultadoCalculadora">
@@ -145,27 +145,28 @@
                 </div>
                 <div class="exibir-resultado">
                     <div class="calculo-resultado">
-                    <h5>R$</h5>
-                    <h1 class="resultado-calculadora" id="resultadoCalculadora"></h1>
+                    
+                    <h1 class="resultado-calculadora" id="resultadoCalculadora"><span>R$</span></h1>
+                    <h5>Economia anual potencial</h5>
                     </div>
                 </div>
                 <hr>
 
                 <div class="exibir-mensal">
                     <div class="metanoPerdidoMes">
-                        <h5>Metado perdido / Mês:</h5>
-                        <h5 class="conteudo-metano" id="metanoMensal">00,00M³</h5>
+                        <h5>Metano perdido / Mês:</h5>
+                        <h5 class="conteudo-metano" id="metanoMensal">00,00 M³</h5>
                     </div>
                     <div class="perdaMensal">
                         <h5>Perda Mensal:</h5>
-                        <h5 class="perda-mensal" id="perdaMensal">R$00,00</h5>
+                        <h5 class="perda-mensal" id="perdaMensal"><span>R$</span>00,00</h5>
                     </div>
 
                 </div>
 
-                <button class="contactUs"> Contact Us</button>
+                
             </div>
-
+          <button class="contactUs"> Contact Us</button>
         </div>
     </section>
 </body>
