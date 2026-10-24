@@ -1,0 +1,313 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #FFFFFF;
+    color: #2D3748;
+}
+
+/* Navbar */
+header {
+    width: 100%;
+    padding: 15px 5%;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background-color: rgba(255, 255, 255, 0.95); 
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: 500;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #42FF00;
+}
+
+.login-button {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.btn-login {
+    background: none;
+    border: none;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.btn-start {
+    background-color: #000000;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-start:hover {
+    background-color: #333;
+}
+
+/* seção de entrada */
+
+.entrada-section {
+    background: linear-gradient(180deg, #FFFFFF 0%, #E0FFE0 40%, #42FF00 100%);
+    padding-top: 150px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+.entrada-content {
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px;
+    position: relative;
+}
+
+.badge-simule {
+    background-color: #42FF00;
+    color: #000000;
+    text-decoration: none;
+    padding: 8px 24px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 40px;
+}
+
+.entrada-title {
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 40px;
+    color: #000000;
+}
+
+.text-green-pluma {
+    color: #42FF00;
+}
+
+.contato-container {
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.email-form {
+    display: flex;
+    background: #FFFFFF;
+    border-radius: 30px;
+    padding: 5px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.email-form input {
+    border: none;
+    padding: 15px 25px;
+    border-radius: 30px 0 0 30px;
+    outline: none;
+    font-size: 16px;
+    width: 300px;
+}
+
+.email-form button {
+    background-color: #000000;
+    color: #FFFFFF;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.dashboard-img {
+    position: relative; 
+    width: 100%;
+    max-width: 900px;
+    margin-top: 20px;
+    margin-bottom: -50px; 
+}
+
+.img-metricas {
+    position: absolute;
+    top: -170px; 
+    right: -50px; 
+    width: 320px; 
+    z-index: 5;
+    pointer-events: none; 
+}
+
+.img-dashboard {
+    width: 100%;
+    height: auto;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 -10px 40px rgba(0,0,0,0.15);
+    display: block; 
+    position: relative;
+    z-index: 1;
+}
+
+
+/* Seção sobre nós */
+.aboutUs-section {
+    background-color: #FFFFFF;
+    padding: 120px 5%;
+}
+
+.aboutUs-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 60px;
+}
+
+/* Lado Esquerdo */
+.aboutUs-left {
+    flex: 1;
+    max-width: 500px;
+}
+
+.info-energia {
+    background-color: #42FF00;
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 16px;
+    border-radius: 30px;
+    margin-bottom: 25px;
+}
+
+.info-energia img {
+    width: 14px;
+    margin-right: 8px;
+}
+
+.info-energia h4 {
+    color: #000000;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.aboutUs-left h2 {
+    font-size: 46px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 25px;
+    color: #2D3748;
+}
+
+.aboutUs-left p {
+    color: #4A5568;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 35px;
+}
+
+.btn-aboutUs {
+    background-color: #42FF00;
+    color: #000000;
+    border: none;
+    padding: 16px 32px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s;
+}
+
+.btn-aboutUs:hover {
+    transform: scale(1.02);
+}
+
+.seta-icon {
+    font-size: 20px;
+}
+
+/* Lado Direito (Cards) */
+.aboutUs-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card-aboutUsRight {
+    background-color: #B4FF9A;
+    padding: 24px;
+    border-radius: 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    transition: 0.3s;
+}
+
+.card-icon {
+    background-color: #164636;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.card-icon img {
+    width: 24px;
+    height: 24px;
+}
+
+.card-text h4 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 6px;
+}
+
+.card-text p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #4A5568;
+}

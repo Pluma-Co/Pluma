@@ -1,0 +1,257 @@
+:root {
+    --verde-escuro: #164636;
+    --verde-titulo: #235347;
+    --verde-suave: #739086;
+    --positivo: #B4FF9A;
+    --perda: #ff888a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Layout geral */
+header {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding-top: 15px;
+}
+
+main,
+#div_dashboard,
+#div_sensores,
+.div_kpiVazamento,
+#div_perdas,
+.div_rotulos,
+.id_dado,
+#div_filtroData {
+    display: flex;
+    flex-direction: row;
+}
+
+#logo_header {
+    width: 150px;
+    padding-left: 25px;
+}
+
+/* Sidebar */
+#sidebar {
+    width: 100px;
+    height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+}
+
+.li_icons {
+    list-style-type: none;
+    padding: 20px 0;
+}
+
+.sidebar_icons {
+    width: 25px;
+}
+
+/* Título */
+#div_titulo {
+    height: 70px;
+    width: calc(100vw - 100px);
+    display: flex;
+    align-items: center;
+    padding-left: 50px;
+}
+
+#titulo {
+    color: var(--verde-titulo);
+    font-size: 50px;
+    font-weight: bold;
+}
+
+/* Filtros e KPIs */
+#div_dashboard {
+    justify-content: space-around;
+}
+
+#div_filtro {
+    color: var(--verde-suave);
+    width: 40vw;
+    height: 30vh;
+}
+
+#div_filtroData {
+    justify-content: flex-start;
+}
+
+.btn_filtro {
+    background-color: #ffffff;
+    font-weight: 500;
+    border-radius: 100px;
+    width: 150px;
+    height: 28px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.div_kpiVazamento {
+    padding-top: 10px;
+}
+
+#div_perdas {
+    margin-top: 15px;
+    height: 50%;
+}
+
+.div_kpiInterna {
+    width: calc(50% - 50px);
+    padding-left: 5%;
+}
+
+#icon_vazamento,
+#espacador {
+    width: 100px;
+    height: 100px;
+}
+
+#icon_vazamento {
+    background-image: url(../src/icon_vazamento.png);
+    background-size: cover;
+}
+
+.valor_kpi {
+    color: var(--verde-escuro);
+    font-size: 35px;
+    font-weight: bolder;
+    margin: -8px 0;
+}
+
+.alta,
+.queda {
+    font-weight: bold;
+}
+
+.alta {
+    color: red;
+}
+
+.queda {
+    color: var(--positivo);
+}
+
+/* Textos de KPI */
+.titulo_kpi {
+    font-size: 18px;
+    text-align: center;
+}
+
+.div_kpiInterna .titulo_kpi {
+    text-align: left;
+}
+
+#div_perdas .titulo_kpi {
+    padding-top: 5%;
+}
+
+.topico_kpi {
+    font-size: 15px;
+    font-weight: bold;
+    color: var(--verde-suave);
+}
+
+.dado_kpi {
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Cartões brancos (perda por local / financeira) */
+#div_kpi2 {
+    border: 1px solid;
+    width: 34vw;
+    height: 38vh;
+    background-color: var(--verde-escuro);
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.div_dados {
+    color: var(--verde-suave);
+    background-color: #fff;
+    width: 45%;
+    height: 90%;
+    border-radius: 15px;
+    padding: 15px 20px;
+}
+
+/* Valores em vermelho: 2º cartão e lista de últimos vazamentos */
+.dados_vazamento .dado_kpi {
+    color: var(--perda);
+}
+
+/* Gráfico e últimos vazamentos */
+#div_sensores {
+    padding-left: 4.5%;
+}
+
+#div_perdas,
+#div_grafico,
+#div_ultimosVazamentos,
+.dados_vazamento {
+    border: 1px solid #000000;
+    border-radius: 20px;
+}
+
+#div_grafico,
+#div_ultimosVazamentos {
+    margin: 10px;
+    padding: 10px;
+}
+
+#div_grafico {
+    width: calc(55vw - 100px);
+}
+
+#div_ultimosVazamentos {
+    width: calc(40.5vw - 100px);
+}
+
+#div_grafico .titulo_kpi,
+#div_ultimosVazamentos .titulo_kpi {
+    color: var(--verde-titulo);
+}
+
+#div_ultimosVazamentos .titulo_kpi {
+    margin-top: 10px;
+}
+
+#grafico_linha {
+    margin: 25px;
+}
+
+.dados_vazamento {
+    border-radius: 15px;
+    margin: 15px;
+    padding: 30px 15px;
+}
+
+.div_rotulos {
+    justify-content: space-around;
+}
+
+.rotulos {
+    display: flex;
+    flex-direction: column;
+}
+
+.circulo_status {
+    width: 20px;
+    height: 20px;
+    background-color: var(--verde-escuro);
+    border-radius: 100%;
+}
