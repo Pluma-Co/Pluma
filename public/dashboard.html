@@ -206,6 +206,13 @@
   </main>
 
   <script>
+    function classificarStatusVazamento(valorPpm) {
+        if (valorPpm >= 0 && valorPpm <= 500) return { texto: 'Normal', cor: '#333333' };
+        if (valorPpm >= 501 && valorPpm <= 2000) return { texto: 'Leve', cor: '#28A745' };
+        if (valorPpm >= 2001 && valorPpm <= 5000) return { texto: 'Moderado', cor: '#FFC107' };
+        return { texto: 'Crítico', cor: '#DC3545' };
+    }
+
     const grafico_linha = document.getElementById("grafico_linha");
 
     new Chart(grafico_linha, {
@@ -240,6 +247,10 @@
         scales: {
           y: {
             beginAtZero: true,
+            max: 10000,
+            ticks: {
+              stepSize: 2000
+            },
             title: {
               display: true,
               text: "Vazamento (m³)"
