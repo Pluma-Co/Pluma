@@ -49,6 +49,7 @@
 
 <script>
   let tentativa = 0;
+  let limiteTentativa = 5;
 
   function autenticarLogin() {
     let email = ipt_email.value;
@@ -66,30 +67,40 @@
       emailValido = true;
     }
 
-    if (senha.lenght <= 8) {
-      div_msg_senha.innerHTML = `<p style="color:red; front-size:10px"> A senha deve ter mais de 8 caracteres<p>`
+    if (senha.length <= 8) {
+      div_msg_senha.innerHTML = `<p style="color:red; front-size:10px"> senha incorreta<p>`
       senhaValida = false;
     }
     else if (senha == senha.toLowerCase()) {
-      div_msg_senha.innerHTML = `<p style="color:red; font-size:10px">A senha deve ter ao menos uma letra maiúscula</p>`;
+      div_msg_senha.innerHTML = `<p style="color:red; font-size:10px">senha incorreta</p>`;
       senhaValida = false;
     } else {
+      div_msg_senha.innerHTML = "";
       senhaValida = true;
     }
+     if (emailValido && senhaValida) {
+      let continuar = true;
 
-    while(senhaValida != true && tentativa <= 5) {
-      tentativa++
-      div_msg_senha.innerHTML = `Restam ${tentativa} tentativas `
-      
+    while (continuar && tentativa < limiteTentativa) {
+        tentativa++;
+        continuar = false;
+
+        if (senha == "@Pluma2026") {
+          div_msg_senha.innerHTML =
+            window.location.href = "dashboard.html";
+        } else {
+          if (tentativa < limiteTentativa) {
+            div_msg_senha.innerHTML =
+              "<p style='color:red; font-size:10px'>Senha incorreta. Você tem " +
+              (limiteTentativa - tentativa) +
+              " tentativas restantes.</p>";
+          } else {
+            div_msg_senha.innerHTML =
+              "<p style='color:red; font-size:10px'>Limite de tentativas atingido.</p>";
+          }
+        }
+      }
     }
-
-    if (emailValido && senhaValida) {
-      window.location = "dashboard.html"
-    }
-
-
   }
-  const valor = localStorage.getItem('senha');
-console.log(valor);'ipt_senha.value' // 'valorDesejado'
 
 </script>
