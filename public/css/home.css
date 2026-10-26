@@ -375,7 +375,7 @@ header {
 }
 
 /* Container dos Cartões */
-.car-calculadora {
+.card-calculadora {
     width: 100%;
     max-width: 750px; 
     display: flex;
@@ -421,6 +421,13 @@ header {
     font-family: inherit;
 }
 
+.card-metano input::placeholder, 
+.card-venda input::placeholder {
+    color: rgba(255, 255, 255, 0.5); 
+    opacity: 1; 
+    font-weight: 700;
+}
+
 .card-venda span {
     font-size: 22px;
     font-weight: 400;
@@ -453,8 +460,9 @@ header {
     color: #E2E8F0;
 }
 
-.economiza img {
-    height: 20px;
+.economiza span {
+    color: #42FF00;
+    font-weight: 700;
 }
 
 .calculo-resultado {
