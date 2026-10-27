@@ -20,7 +20,7 @@ li,
 #header,
 #div_kpis,
 .dashboard_grafico,
-#div_dashboard,
+#div_dashboard, .div_status, .status_cabecalho,
 #div_sensores,
 .div_kpiVazamento,
 #div_perdas,
@@ -142,7 +142,7 @@ main,
 }
 
 /* Gráficos da Dashboard */
-.dashboard_grafico {
+.dashboard_grafico, .kpi_vazamentosAtuais {
     border: #164636 1px solid;
     width: 41vw;
     height: 35vh;
@@ -153,6 +153,21 @@ main,
 
 #grafico_vazamentos {
     width: 50px;
+}
+
+.kpi_vazamentosAtuais{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.status_cabecalho{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: solid 1px;
+    width: 90%;
+
 }
 
 /* Título */
@@ -168,6 +183,18 @@ main,
     color: var(--verde-titulo);
     font-size: 50px;
     font-weight: bold;
+}
+
+.div_status{
+    justify-content: space-evenly;
+    width: 37vw;
+    height: 12vh;
+    border: 1px red solid;
+}
+
+.status_alerta{
+    display: flex;
+    flex-direction: row;
 }
 
 /* Filtros e KPIs */
@@ -256,7 +283,7 @@ main,
 }
 
 .dado_kpi {
-    font-size: 35px;
+    font-size: 1.8vw;
     font-weight: bold;
     text-align: center;
     color: var(--verde-escuro);
