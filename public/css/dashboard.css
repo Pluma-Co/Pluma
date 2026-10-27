@@ -15,7 +15,11 @@
 
 /* Layout geral */
 
-body, li, #header, #div_kpis,
+body,
+li,
+#header,
+#div_kpis,
+.dashboard_grafico,
 #div_dashboard,
 #div_sensores,
 .div_kpiVazamento,
@@ -27,7 +31,8 @@ body, li, #header, #div_kpis,
     flex-direction: row;
 }
 
-main, .div_kpi{
+main,
+.div_kpi {
     display: flex;
     flex-direction: column;
 }
@@ -46,7 +51,7 @@ main, .div_kpi{
     width: 100%;
 }
 
-#sidebar a{
+#sidebar a {
     display: block;
     width: 100%;
     text-decoration: none;
@@ -54,7 +59,7 @@ main, .div_kpi{
     font-size: 85%;
 }
 
-#sidebar_logo{
+#sidebar_logo {
     width: 100%;
 }
 
@@ -72,17 +77,17 @@ main, .div_kpi{
     margin-left: 7%;
 }
 
-.sidebar_paginas{
+.sidebar_paginas {
     padding-left: 10%;
 }
 
-#sidebar_logout{
+#sidebar_logout {
     width: 100%;
     height: 18vh;
     border-top: solid #ffffff 1px;
 }
 
-#header{
+#header {
     width: 88vw;
     height: 7vh;
     padding: 0% 5% 0% 2%;
@@ -91,17 +96,17 @@ main, .div_kpi{
     justify-content: space-between;
 }
 
-.header_usuario{
+.header_usuario {
     font-size: 20px;
     font-weight: bold;
     color: var(--verde-escuro);
 }
 
-.header_span{
+.header_span {
     padding-left: 25px;
 }
 
-#select_usina{
+#select_usina {
     border-radius: 5px;
 }
 
@@ -117,23 +122,37 @@ main, .div_kpi{
 
 /* kpis */
 
-#div_kpis{
+#div_kpis {
     margin: 2vh 0vw;
     justify-content: space-evenly;
 }
 
-.div_kpi{
+.div_kpi {
     width: 19vw;
-    height: 15vh;
+    height: 13vh;
     border: 1px solid black;
     border-radius: 5px;
     align-items: center;
     justify-content: space-evenly;
 }
 
-.descricao_kpi{
+.descricao_kpi {
     font-size: 15px;
     color: var(--verde-suave);
+}
+
+/* Gráficos da Dashboard */
+.dashboard_grafico {
+    border: #164636 1px solid;
+    width: 41vw;
+    height: 35vh;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+#grafico_vazamentos {
+    width: 50px;
 }
 
 /* Título */
@@ -153,7 +172,11 @@ main, .div_kpi{
 
 /* Filtros e KPIs */
 #div_dashboard {
-    justify-content: space-around;
+    /* justify-content: space-around; */
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    height: 76vh;
+    width: 90vw;
 }
 
 #div_filtro {

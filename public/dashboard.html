@@ -60,6 +60,7 @@
   </div>
   <main>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation"></script>
     <div id="header">
       <div id="header_usuario">
         <p class="header_usuario">Olá, <span id="nome_usuario">Usuário</span>!</p>
@@ -82,22 +83,41 @@
       <div class="div_kpi">
         <p class="titulo_kpi">Gás perdido</p>
         <p id="valor_gasPerdido" class="dado_kpi">184 m³</p>
-        <p class="descricao_kpi"><span id="percente_gasPerdido" style="color: green; font-weight: bolder;">-8%</span> do período anterior</p>
+        <p class="descricao_kpi"><span id="percente_gasPerdido" style="color: green; font-weight: bolder;">-8%</span> do
+          período anterior</p>
       </div>
       <div class="div_kpi">
         <p class="titulo_kpi">Vazamentos Totais</p>
         <p id="valor_vazamentosTotais" class="dado_kpi">27</p>
-        <p class="descricao_kpi"><span id="percente_vazamentosTotais" style="color: red; font-weight: bolder;">+5%</span> do período anterior</p>
+        <p class="descricao_kpi"><span id="percente_vazamentosTotais"
+            style="color: red; font-weight: bolder;">+5%</span> do período anterior</p>
       </div>
       <div class="div_kpi">
         <p class="titulo_kpi">Maior tempo de Vazamento</p>
-        <p id="valor_gasPerdido" class="dado_kpi">12h</p>
-        <p class="descricao_kpi"><span id="percente_gasPerdido" style="color: red; font-weight: bolder;">5%</span> acima do esperado</p>
+        <p id="valor_tempoVazamento" class="dado_kpi">12h</p>
+        <p class="descricao_kpi"><span id="percente_tempoVazamento" style="color: red; font-weight: bolder;">5%</span>
+          acima
+          do esperado</p>
       </div>
       <div class="div_kpi">
         <p class="titulo_kpi">Tempo Médio de Reparo</p>
-        <p id="valor_gasPerdido" class="dado_kpi">44h</p>
-        <p class="descricao_kpi"><span id="percente_gasPerdido" style="color: red; font-weight: bolder;">10%</span> acima do esperado</p>
+        <p id="valor_mediaReparo" class="dado_kpi">44h</p>
+        <p class="descricao_kpi"><span id="percente_mediaReparo" style="color: red; font-weight: bolder;">10%</span>
+          acima do esperado</p>
+      </div>
+    </div>
+    <div id="div_dashboard">
+      <div class="dashboard_grafico">
+        <canvas id="grafico_vazamentos"></canvas>
+      </div>
+      <div class="dashboard_grafico">
+        <canvas id="grafico_vazamentos"></canvas>
+      </div>
+      <div class="dashboard_grafico">
+        <canvas id="grafico_vazamentoMensal"></canvas>
+      </div>
+      <div class="dashboard_grafico">
+        <canvas id="grafico_local"></canvas>
       </div>
     </div>
     <!-- <div id="div_site">
@@ -247,36 +267,38 @@
 
   <script>
     function classificarStatusVazamento(valorPpm) {
-        if (valorPpm >= 0 && valorPpm <= 500) return { texto: 'Normal', cor: '#333333' };
-        if (valorPpm >= 501 && valorPpm <= 2000) return { texto: 'Leve', cor: '#28A745' };
-        if (valorPpm >= 2001 && valorPpm <= 5000) return { texto: 'Moderado', cor: '#FFC107' };
-        return { texto: 'Crítico', cor: '#DC3545' };
+      if (valorPpm >= 0 && valorPpm <= 500) return { texto: 'Normal', cor: '#333333' };
+      if (valorPpm >= 501 && valorPpm <= 2000) return { texto: 'Leve', cor: '#28A745' };
+      if (valorPpm >= 2001 && valorPpm <= 5000) return { texto: 'Moderado', cor: '#FFC107' };
+      return { texto: 'Crítico', cor: '#DC3545' };
     }
 
-    const grafico_linha = document.getElementById("grafico_linha");
+    const grafico_vazamentos = document.getElementById("grafico_vazamentos");
+    const grafico_vazamentoMensal = document.getElementById("grafico_vazamentoMensal");
+    const grafico_local = document.getElementById("grafico_local");
 
-    new Chart(grafico_linha, {
+    new Chart(grafico_vazamentos, {
       type: "line",
       data: {
-        labels: ["jan", "fev", "mar", "Abr", "Maio", "Jun"],
+        labels: ["00:00", "02:00", "04:00", "06:00", "08:00", "10:00"],
         datasets: [
           {
             label: "Sensor1",
-            data: [96.2, 0, 26.1, 89.5, 98.5, 63.8],
+            data: [9600.2, 0, 2600.1, 8900.5, 9800.5, 6300.8],
             borderWidth: 3,
             backgroundColor: "rgb(112, 110, 231)",
             borderColor: "rgb(112, 110, 231)",
           },
           {
             label: "Sensor2",
-            data: [31.5, 35.6, 46, 90.2, 90.7, 4.6],
+            data: [3100.5, 3500.6, 4600, 9000.2, 9000.7, 400.6],
             borderWidth: 3,
             backgroundColor: "rgb(85, 196, 174)",
             borderColor: "rgb(85, 196, 174)",
           },
           {
             label: "Sensor3",
-            data: [88.5, 17.5, 82.4, 58, 26.8, 53.8],
+            data: [8800.5, 1700.5, 8200.4, 5800, 2600.8, 5300.8],
             borderWidth: 3,
             backgroundColor: "rgb(255, 146, 138)",
             borderColor: "rgb(255, 146, 138)",
@@ -284,6 +306,32 @@
         ],
       },
       options: {
+        plugins: {
+          annotation: {
+            annotations: {
+              meta: {
+                type: "line",
+                yMin: 1000,
+                yMax: 1000,
+                borderColor: "red",
+                borderWidth: 1
+              },
+            }
+          },
+          title: {
+            display: true,
+            text: "Vazamento em tempo real (ppm)",
+            color: "#235347",
+            font: {
+              size: 18,
+              weight: "bold"
+            },
+            padding: {
+              top: 10,
+              bottom: 20
+            }
+          }
+        },
         scales: {
           y: {
             beginAtZero: true,
@@ -293,7 +341,133 @@
             },
             title: {
               display: true,
-              text: "Vazamento (m³)"
+              text: "Vazamento (ppm)"
+            }
+          }
+        }
+      }
+    });
+
+    new Chart(grafico_vazamentoMensal, {
+      type: "bar",
+      data: {
+        labels: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"],
+        datasets: [
+          {
+            label: "Sensor1",
+            data: [15, 35, 45, 180, 45, 30, 30, 160, 15, 15, 7, 150],
+            borderWidth: 3,
+            backgroundColor: "rgb(52, 107, 9)",
+            borderColor: "rgb(52, 107, 9)",
+            borderRadius: {
+              topLeft: 15,
+              topRight: 15,
+              bottomLeft: 0,
+              bottomRight: 0
+            }
+          },
+        ],
+      },
+      options: {
+        plugins: {
+          annotation: {
+            annotations: {
+              meta: {
+                type: "line",
+                yMin: 60,
+                yMax: 60,
+                borderColor: "red",
+                borderWidth: 1
+              },
+            }
+          },
+          title: {
+            display: true,
+            text: "Vazamento em tempo real (ppm)",
+            color: "#235347",
+            font: {
+              size: 18,
+              weight: "bold"
+            },
+            padding: {
+              top: 10,
+              bottom: 20
+            }
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            ticks: {
+              stepSize: 30
+            },
+            title: {
+              display: true,
+              text: "Vazamento (ppm)"
+            }
+          }
+        }
+      }
+    });
+
+    new Chart(grafico_local, {
+      type: "bar",
+      data: {
+        labels: ["Armazenamento", "Biodigestor", "Compressor"],
+        datasets: [
+          {
+            label: "m³",
+            data: [180, 70, 55],
+            borderWidth: 3,
+            backgroundColor: "rgb(52, 107, 9)",
+            borderColor: "rgb(52, 107, 9)",
+            borderRadius: {
+              topLeft: 0,
+              topRight: 15,
+              bottomLeft: 0,
+              bottomRight: 15
+            }
+          },
+        ],
+      },
+      options: {
+        plugins: {
+          annotation: {
+            annotations: {
+              meta: {
+                type: "line",
+                xMin: 75,
+                xMax: 75,
+                borderColor: "red",
+                borderWidth: 1
+              },
+            }
+          },
+          title: {
+            display: true,
+            text: "Vazamento por Local",
+            color: "#235347",
+            font: {
+              size: 18,
+              weight: "bold"
+            },
+            padding: {
+              top: 10,
+              bottom: 20
+            }
+          }
+        },
+        indexAxis: "y",
+        scales: {
+          x: {
+            beginAtZero: true,
+            max: 200,
+            ticks: {
+              stepSize: 50
+            },
+            title: {
+              display: true,
+              text: ""
             }
           }
         }
