@@ -17,50 +17,90 @@
 </head>
 
 <body>
+  <div id="sidebar">
+    <div style="height: 82vh;">
+      <img id="sidebar_logo" src="assets/logo_branca.png" alt="">
+      <ul>
+        <a href="dashboard.html">
+          <li class="li_icons" style="background-color: #ffffff; color: #051f20;">
+            <img src="assets/icons/dashboard_colorido.svg" class="sidebar_icons" />
+            <p class="sidebar_paginas">Dashboard</p>
+          </li>
+        </a>
+        <a href="">
+          <li class="li_icons">
+            <img src="assets/icons/historico.svg" class="sidebar_icons" />
+            <p class="sidebar_paginas">Histórico</p>
+          </li>
+        </a>
+        <a href="index.html">
+          <li class="li_icons">
+            <img src="assets/icons/locais.svg" class="sidebar_icons" />
+            <p class="sidebar_paginas">Sensores</p>
+          </li>
+        </a>
+      </ul>
+    </div>
+    <div id="sidebar_logout">
+      <ul>
+        <a href="">
+          <li class="li_icons">
+            <img src="assets/icons/configuracoes.svg" class="sidebar_icons" />
+            <p class="sidebar_paginas">Configurações</p>
+          </li>
+        </a>
+        <a href="index.html">
+          <li class="li_icons">
+            <img src="assets/icons/logout.svg" class="sidebar_icons" />
+            <p class="sidebar_paginas">Sair</p>
+          </li>
+        </a>
+      </ul>
+    </div>
+  </div>
   <main>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <div id="sidebar">
-      <div style="height: 82vh;">
-        <img id="sidebar_logo" src="assets/logo_branca.png" alt="">
-        <ul>
-          <a href="dashboard.html">
-            <li class="li_icons" style="background-color: #ffffff; color: #051f20;">
-              <img src="assets/icons/dashboard_colorido.svg" class="sidebar_icons" />
-              <p class="sidebar_paginas">Dashboard</p>
-            </li>
-          </a>
-          <a href="">
-            <li class="li_icons">
-              <img src="assets/icons/historico.svg" class="sidebar_icons" />
-              <p class="sidebar_paginas">Histórico</p>
-            </li>
-          </a>
-          <a href="index.html">
-            <li class="li_icons">
-              <img src="assets/icons/locais.svg" class="sidebar_icons" />
-              <p class="sidebar_paginas">Sensores</p>
-            </li>
-          </a>
-        </ul>
+    <div id="header">
+      <div id="header_usuario">
+        <p class="header_usuario">Olá, <span id="nome_usuario">Usuário</span>!</p>
       </div>
-      <div id="sidebar_logout">
-        <ul>
-          <a href="">
-            <li class="li_icons">
-              <img src="assets/icons/configuracoes.svg" class="sidebar_icons" />
-              <p class="sidebar_paginas">Configurações</p>
-            </li>
-          </a>
-          <a href="index.html">
-            <li class="li_icons">
-              <img src="assets/icons/logout.svg" class="sidebar_icons" />
-              <p class="sidebar_paginas">Sair</p>
-            </li>
-          </a>
-        </ul>
+      <div id="header_usina">
+        <span class="header_span">Selecione a usina:</span>
+        <select id="select_usina">
+          <option value="" selected disabled></option>
+          <option value="">Usina de Teste</option>
+        </select>
+      </div>
+      <div id="header_filtro">
+        <span class="header_span">Selecione um período:</span>
+        <button id="btn_hoje" class="btn_filtro">Hoje</button>
+        <button id="btn_semana" class="btn_filtro">Esta semana</button>
+        <button id="btn_mes" class="btn_filtro">Últimos 30 dias</button>
       </div>
     </div>
-    <div id="div_site">
+    <div id="div_kpis">
+      <div class="div_kpi">
+        <p class="titulo_kpi">Gás perdido</p>
+        <p id="valor_gasPerdido" class="dado_kpi">184 m³</p>
+        <p class="descricao_kpi"><span id="percente_gasPerdido" style="color: green; font-weight: bolder;">-8%</span> do período anterior</p>
+      </div>
+      <div class="div_kpi">
+        <p class="titulo_kpi">Vazamentos Totais</p>
+        <p id="valor_vazamentosTotais" class="dado_kpi">27</p>
+        <p class="descricao_kpi"><span id="percente_vazamentosTotais" style="color: red; font-weight: bolder;">+5%</span> do período anterior</p>
+      </div>
+      <div class="div_kpi">
+        <p class="titulo_kpi">Maior tempo de Vazamento</p>
+        <p id="valor_gasPerdido" class="dado_kpi">12h</p>
+        <p class="descricao_kpi"><span id="percente_gasPerdido" style="color: red; font-weight: bolder;">5%</span> acima do esperado</p>
+      </div>
+      <div class="div_kpi">
+        <p class="titulo_kpi">Tempo Médio de Reparo</p>
+        <p id="valor_gasPerdido" class="dado_kpi">44h</p>
+        <p class="descricao_kpi"><span id="percente_gasPerdido" style="color: red; font-weight: bolder;">10%</span> acima do esperado</p>
+      </div>
+    </div>
+    <!-- <div id="div_site">
       <div id="div_titulo">
         <p id="titulo">Monitoramento de vazamentos</p>
       </div>
@@ -202,7 +242,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
   </main>
 
   <script>
