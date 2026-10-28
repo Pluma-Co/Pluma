@@ -101,7 +101,7 @@ header {
     position: relative;
 }
 
-.badge-simule {
+.icon-simulador {
     background-color: #42FF00;
     color: #000000;
     text-decoration: none;
@@ -188,7 +188,7 @@ header {
 /* Seção sobre nós */
 .aboutUs-section {
     background-color: #FFFFFF;
-    padding: 120px 5%;
+    padding: 120px;
 }
 
 .aboutUs-container{
@@ -339,7 +339,7 @@ header {
 .topoCalculator {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px); 
+    -webkit-backdrop-filter: blur(16px); /* Efeito espelho*/
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
     border-radius: 12px;
@@ -619,7 +619,7 @@ header {
     line-height: 1.6;
 }
 .duvidas-card.ativo {
-    border-color: #42FF00; /
+    border-color: #42FF00; 
 }
 
 .duvidas-card.ativo .duvidas-resposta {
@@ -630,3 +630,7 @@ header {
     transform: rotate(45deg); 
     opacity: 1;
 }
+
+/* Footer */
+
+
