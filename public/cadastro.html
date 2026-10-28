@@ -3,12 +3,84 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pluma | Cadastro</title>
-
-33</head>
+  <link rel="stylesheet" href="css/cadLog.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
 
 <body>
+   <!-- CABEÇALHO -->
+    <header>
 
+        <nav>
+
+            <img class="logonav" src="assets/logo_branca.png" alt="Logo Pluma">
+
+
+            <div class="nav-item">
+
+                <img class="iconenav" src="assets/icons/icon_home.png" alt="">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+            </div>
+
+
+            <div class="nav-item">
+
+                <img class="iconenav" src="assets/icons/icon_calculadora.png" alt="">
+
+                <a href="#calculadora">
+                    Calculadora
+                </a>
+
+            </div>
+
+            <div class="nav-item">
+
+                <img class="iconenav" src="assets/icons/icone_grupo.png" alt="">
+
+                <a href="#sobre-nos">
+                    Sobre Nós
+                </a>
+
+            </div>
+
+            <div class="nav-item">
+
+                <img class="iconenav" src="assets/icons/icon_sustentavel.png" alt="">
+
+                <a href="#sustentabilidade">
+                    Sustentabilidade
+                </a>
+
+            </div>
+
+
+            <div class="btn">
+
+                <a href="cadastro.html">
+
+                    <button class="btn_nav">
+                        CADASTRO
+                    </button>
+
+                </a>
+                <a href="login.html">
+
+                    <button class="btn_nav">
+                        LOGIN
+                    </button>
+
+                </a>
+            </div>
+
+        </nav>
+
+    </header>
   <div class="container">
 
     <!-- Lado esquerdo: logo -->
@@ -24,7 +96,7 @@
 
         <div class="campo">
           <img src="assets/icons/icone-usina.svg" alt="">
-          <input type="text" placeholder="Código da Usina" id="ipt_codigo_usina">
+          <input type="text" placeholder="Código da empresa" id="ipt_codigo_empresa">
         </div>
         <div id="div_msg_codigo_usina"></div>
 
@@ -70,14 +142,14 @@
 <script>
 
   function cadastrar() {
-    let codigoUsina = ipt_codigo_usina.value;
+    let codigoEmpresa = ipt_codigo_empresa.value;
     let nome = ipt_nome.value;
     let username = ipt_username.value
     let email = ipt_email.value;
     let senha = ipt_senha.value;
     let confirmacao = ipt_confirmacao.value;
 
-    let codigoUsinaValido = true;
+    let codigoEmpresaValido = true;
     let nomeValido = true;
     let usernameValido = true;
     let emailValido = true;
@@ -86,9 +158,9 @@
 
 
     // validar usina
-    if (codigoUsina.length == 0) {
+    if (codigoEmpresa.length == 0) {
       div_msg_codigo_usina.innerHTML = `<p style="color:red; font-size:10px">Digite o código da usina</p>`;
-      codigoUsinaValido = false;
+      codigoEmpresaValido = false;
     } else {
       div_msg_codigo_usina.innerHTML = ``;
     }
@@ -145,7 +217,7 @@
 
     // verificar se todas validações passaram
 
-    if (codigoUsinaValido && nomeValido && usernameValido && emailValido && senhaValida && confirmacaoValida) {
+    if (codigoEmpresaValido && nomeValido && usernameValido && emailValido && senhaValida && confirmacaoValida) {
       alert('Cadastro Validado com Sucesso!')
       window.location = "login.html"
 
