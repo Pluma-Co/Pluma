@@ -63,7 +63,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation"></script>
     <div id="header">
       <div id="header_usuario">
-        <p class="header_usuario">Olá, <span id="nome_usuario">Usuário</span>!</p>
+        <p class="header_usuario">Olá, <span id="nome_usuario">João</span>!</p>
       </div>
       <div id="header_usina">
         <span class="header_span">Selecione a usina:</span>
@@ -113,76 +113,47 @@
 
       <!-- Seção de locais com vazamentos em tempo real -->
       <div class="kpi_vazamentosAtuais">
+        <p class="titulo_kpi">Locais com Vazamento</p>
         <div class="div_status">
           <div class="status_cabecalho">
             <div class="status_alerta">
-              <div class="circulo_status"></div>
-
-              <!-- Divisão Armazenamento -->
-              <div class="rotulos">
-                <p class="status_subtitulo info_kpi">Armazenamento</p>
-                <p class="status_subtitulo info_kpi">Sensor 01</p>
-
-              </div>
+              <div id="circulo_critico" class="circulo_status"></div>
+              <p class="status_subtitulo info_kpi">Armazenamento</p>
             </div>
-            <div class="rotulos">
-              <span class="status_subtitulo">Vazamento Atual</span>
-              <p class="dado_kpi">290</p>
-            </div>
-
-            <div class="rotulos">
-              <span class="status_subtitulo">Status</span>
-              <p class="dado_kpi">Crítico</p>
-
-
-            </div>
-          </div>
-        </div>
-        <!-- FIM - Divisão Armazenamento -->
-
-        <!-- Divisão Purificação -->
-        <div class="div_status">
-          <div class="status_cabecalho">
-            <div class="status_alerta">
-              <div class="circulo_status"></div>
-              <div class="rotulos">
-                <span class="status_subtitulo">Purificação</span>
-                <p>Sensor 02</p>
-              </div>
-            </div>
-
-            <div class="rotulos">
-              <span class="status_subtitulo">Vazamento Atual</span>
-              <p class="dado_kpi">117</p>
-            </div>
-            <div class="rotulos">
-              <span class="status_subtitulo">Status</span>
-              <p class="dado_kpi">Moderado</p>
-
-            </div>
+            <span class="status_subtitulo">Vazamento Atual<br>
+              <span id="vazamento_critico">120,1 ppm</span>
+            </span>
+            <span class="status_subtitulo">Status<br>
+              <span id="status_critico">Crítico</span>
+            </span>
           </div>
         </div>
         <div class="div_status">
           <div class="status_cabecalho">
             <div class="status_alerta">
-              <div class="circulo_status"></div>
-
-              <div class="rotulos">
-                <span class="status_subtitulo">Armazenamento</span>
-                <p>Sensor 03</p>
-              </div>
+              <div id="circulo_moderado" class="circulo_status"></div>
+              <p class="status_subtitulo info_kpi">Purificação</p>
             </div>
-            <div class="rotulos">
-              <span class="status_subtitulo">Vazamento Atual</span>
-              <p class="dado_kpi">25</p>
-
+            <span class="status_subtitulo">Vazamento Atual<br>
+              <span id="vazamento_moderado">55,1 ppm</span>
+            </span>
+            <span class="status_subtitulo">Status<br>
+              <span id="status_moderado">Moderado</span>
+            </span>
+          </div>
+        </div>
+        <div class="div_status">
+          <div class="status_cabecalho">
+            <div class="status_alerta">
+              <div id="circulo_leve" class="circulo_status"></div>
+              <p class="status_subtitulo info_kpi">Compressor</p>
             </div>
-            <div class="rotulos">
-              <span class="status_subtitulo">Status</span>
-              <p class="dado_kpi">Leve</p>
-
-
-            </div>
+            <span class="status_subtitulo">Vazamento Atual<br>
+              <span id="vazamento_leve">4,1 ppm</span>
+            </span>
+            <span class="status_subtitulo">Status<br>
+              <span id="status_leve">leve</span>
+            </span>
           </div>
         </div>
       </div>
@@ -195,158 +166,9 @@
         <canvas id="grafico_local"></canvas>
       </div>
     </div>
-    <!-- <div id="div_site">
-      <div id="div_titulo">
-        <p id="titulo">Monitoramento de vazamentos</p>
-      </div>
-      <div id="div_dashboard">
-        <div>
-          <div id="div_filtro">
-            <div id="div_filtroData">
-              <button id="btn_hoje" class="btn_filtro">
-                <p>Hoje</p>
-              </button><button id="btn_semana" class="btn_filtro">
-                <p>Esta semana</p>
-              </button><button id="btn_mes" class="btn_filtro">
-                <p>Últimos 30 dias</p>
-              </button>
-            </div>
-            <div class="div_kpiVazamento">
-              <div class="div_kpiInterna">
-                <p class="titulo_kpi">Vazamentos</p>
-                <p class="valor_kpi">27</p>
-                <p><span class="alta">+5%</span> do periodo anterior</p>
-              </div>
-              <div id="icon_vazamento"></div>
-              <div class="div_kpiInterna">
-                <p class="titulo_kpi">Perda estimada</p>
-                <p class="valor_kpi">R$ 8420.00</p>
-                <p><span class="queda">⬊-8%</span> do periodo anterior</p>
-              </div>
-            </div>
-            <div id="div_perdas">
-              <div class="div_kpiInterna">
-                <p class="titulo_kpi">Gás perdido</p>
-                <p class="valor_kpi">184 m³</p>
-                <p><span class="queda">⬊-8%</span> do periodo anterior</p>
-              </div>
-              <div id="espacador"></div>
-              <div class="div_kpiInterna">
-                <p class="titulo_kpi">Duração Total</p>
-                <p class="valor_kpi">04h32</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div id="div_kpi2">
-          <div class="div_dados">
-            <p class="titulo_kpi">Vazamento por Local</p>
-            <p class="topico_kpi" style="margin: 15px 0px;">Compressor<span class="dado_kpi">12</span></p>
-            <p class="topico_kpi" style="margin-bottom: 15px;">Biodigestor<span class="dado_kpi">7</span></p>
-            <p class="topico_kpi" style="margin-bottom: 15px;">Purificação <span class="dado_kpi">5</span></p>
-            <p class="topico_kpi" style="margin-bottom: 15px;">Armazenamento<span class="dado_kpi">3</span></p>
-          </div>
-          <div class="div_dados">
-            <p class="titulo_kpi">Perda Financeira</p>
-            <p class="topico_kpi">Compressor</p>
-            <p class="dado_kpi" style="color: #ff888a;">R$ 3.250</p>
-            <p class="topico_kpi">Biodigestor</p>
-            <p class="dado_kpi" style="color: #ff888a;">R$ 2.180</p>
-            <p class="topico_kpi">Purificação</p>
-            <p class="dado_kpi" style="color: #ff888a;">R$ 1.740</p>
-            <p class="topico_kpi">Armazenamento</p>
-            <p class="dado_kpi" style="color: #ff888a;">R$ 1.250</p>
-          </div>
-        </div>
-      </div>
-      <div id="div_sensores">
-        <div id="div_grafico">
-          <p class="titulo_kpi">Vazamentos</p>
-          <canvas id="grafico_linha"></canvas>
-        </div>
-        <div id="div_ultimosVazamentos">
-          <p class="titulo_kpi">Últimos vazamentos</p>
-          <div class="dados_vazamento">
-            <div class="div_rotulos">
-              <div class="rotulos">
-                <div class="id_dado">
-                  <div class="circulo_status"></div>
-                  <p class="topico_kpi">#127</p>
-                </div>
-                <p class="topico_kpi">Compressor</p>
-              </div>
-              <div class="rotulos">
-                <p class="topico_kpi">Tempo</p>
-                <p class="dado_kpi">6 Min</p>
-              </div>
-              <div class="rotulos">
-                <p class="topico_kpi">m³ perdidos</p>
-                <p class="dado_kpi">2,8m³</p>
-              </div>
-              <div class="rotulos">
-                <p class="topico_kpi">$ perdido</p>
-                <p class="dado_kpi">R$ 128,80</p>
-              </div>
-            </div>
-          </div>
-          <div class="dados_vazamento">
-            <div class="div_rotulos">
-              <div class="rotulos">
-                <div class="id_dado">
-                  <div class="circulo_status"></div>
-                  <p class="topico_kpi">#126</p>
-                </div>
-                <p class="topico_kpi">Purificação</p>
-              </div>
-              <div class="rotulos">
-                <p class="topico_kpi">Tempo</p>
-                <p class="dado_kpi">4 Min</p>
-              </div>
-              <div class="rotulos">
-                <p class="topico_kpi">m³ perdidos</p>
-                <p class="dado_kpi">1,9m³</p>
-              </div>
-              <div class="rotulos">
-                <p class="topico_kpi">$ perdido</p>
-                <p class="dado_kpi">R$ 87,40</p>
-              </div>
-            </div>
-          </div>
-          <div class="dados_vazamento">
-            <div class="div_rotulos">
-              <div class="rotulos">
-                <div class="id_dado">
-                  <div class="circulo_status"></div>
-                  <p class="topico_kpi">#125</p>
-                </div>
-                <p class="topico_kpi">Compressor</p>
-              </div>
-              <div class="rotulos">
-                <p class="topico_kpi">Tempo</p>
-                <p class="dado_kpi">9 Min</p>
-              </div>
-              <div class="rotulos">
-                <p class="topico_kpi">m³ perdidos</p>
-                <p class="dado_kpi">4,1m³</p>
-              </div>
-              <div class="rotulos">
-                <p class="topico_kpi">$ perdido</p>
-                <p class="dado_kpi">R$ 188,60</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
   </main>
 
   <script>
-    function classificarStatusVazamento(valorPpm) {
-      if (valorPpm >= 0 && valorPpm <= 500) return { texto: 'Normal', cor: '#333333' };
-      if (valorPpm >= 501 && valorPpm <= 2000) return { texto: 'Leve', cor: '#28A745' };
-      if (valorPpm >= 2001 && valorPpm <= 5000) return { texto: 'Moderado', cor: '#FFC107' };
-      return { texto: 'Crítico', cor: '#DC3545' };
-    }
 
     const grafico_vazamentos = document.getElementById("grafico_vazamentos");
     const grafico_vazamentoMensal = document.getElementById("grafico_vazamentoMensal");
@@ -358,22 +180,22 @@
         labels: ["00:00", "02:00", "04:00", "06:00", "08:00", "10:00"],
         datasets: [
           {
-            label: "Sensor1",
-            data: [9600.2, 0, 2600.1, 8900.5, 9800.5, 6300.8],
+            label: "Armazenamento",
+            data: [960.2, 0, 260.1, 890.5, 980.5, 630.8],
             borderWidth: 3,
             backgroundColor: "rgb(112, 110, 231)",
             borderColor: "rgb(112, 110, 231)",
           },
           {
-            label: "Sensor2",
-            data: [3100.5, 3500.6, 4600, 9000.2, 9000.7, 400.6],
+            label: "Purificação",
+            data: [310.5, 350.6, 460, 900.2, 900.7, 400.6],
             borderWidth: 3,
             backgroundColor: "rgb(85, 196, 174)",
             borderColor: "rgb(85, 196, 174)",
           },
           {
-            label: "Sensor3",
-            data: [8800.5, 1700.5, 8200.4, 5800, 2600.8, 5300.8],
+            label: "Compressor",
+            data: [880.5, 170.5, 820.4, 580, 260.8, 530.8],
             borderWidth: 3,
             backgroundColor: "rgb(255, 146, 138)",
             borderColor: "rgb(255, 146, 138)",
@@ -410,10 +232,6 @@
         scales: {
           y: {
             beginAtZero: true,
-            max: 10000,
-            ticks: {
-              stepSize: 2000
-            },
             title: {
               display: true,
               text: "Vazamento (ppm)"
@@ -429,7 +247,7 @@
         labels: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"],
         datasets: [
           {
-            label: "Sensor1",
+            label: "ppm",
             data: [15, 35, 45, 180, 45, 30, 30, 160, 15, 15, 7, 150],
             borderWidth: 3,
             backgroundColor: "rgb(52, 107, 9)",
@@ -488,7 +306,7 @@
     new Chart(grafico_local, {
       type: "bar",
       data: {
-        labels: ["Armazenamento", "Biodigestor", "Compressor"],
+        labels: ["Armazenamento", "Purificador", "Compressor"],
         datasets: [
           {
             label: "m³",
