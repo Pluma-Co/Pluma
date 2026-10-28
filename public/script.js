@@ -24,9 +24,7 @@ function financeiro() {
     perdaMensal.innerHTML = `<span>R$</span> ${perdaMensalReal.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
 }
 
-
-
-ipt_metano.addEventListener('input', financeiro);
+ipt_metano.addEventListener('input', financeiro, );
 ipt_venda.addEventListener('input', financeiro);
 
 // Usei de diferente as funções de transformação de valores para o Reak, o toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) e o addEventListener('input', financeiro) que atualiza o resultado enquanto a gente clica.

@@ -604,7 +604,7 @@ header {
     flex: 1; 
 }
 
-.icone-toggle {
+.icone-mais {
     width: 20px;
     height: 20px;
     transition: transform 0.3s ease;
@@ -626,7 +626,7 @@ header {
     display: block;
 }
 
-.duvidas-card.ativo .icone-toggle {
+.duvidas-card.ativo .icone-mais {
     transform: rotate(45deg); 
     opacity: 1;
 }
