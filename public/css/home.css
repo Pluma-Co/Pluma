@@ -515,9 +515,12 @@ header {
 }
 
 .contactUs {
-    background-color: #B4FF9A;
-    color: #000000;
-    border: none;
+    color: #FFFFFF;
+    background: rgba(255, 255, 255, 0.05); 
+    backdrop-filter: blur(16px); 
+    -webkit-backdrop-filter: blur(16px); 
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2); 
     border-radius: 30px;
     padding: 16px 60px;
     font-size: 16px;
