@@ -206,12 +206,53 @@
         plugins: {
           annotation: {
             annotations: {
-              meta: {
+              Leve: {
                 type: "line",
-                yMin: 1000,
-                yMax: 1000,
+                yMin: 501,
+                yMax: 501,
+                borderColor: "green",
+                borderWidth: 1,
+                display: (context) => {
+                  return context.chart.data.datasets.some(dataset =>
+                    dataset.data.some(valor =>
+                      typeof valor === "number" &&
+                      Number.isFinite(valor) &&
+                      valor >= 501
+                    )
+                  );
+                }
+              },
+              Moderado: {
+                type: "line",
+                yMin: 2001,
+                yMax: 2001,
+                borderColor: "yellow",
+                borderWidth: 1,
+                display: (context) => {
+                  return context.chart.data.datasets.some(dataset =>
+                    dataset.data.some(valor =>
+                      typeof valor === "number" &&
+                      Number.isFinite(valor) &&
+                      valor >= 2001
+                    )
+                  );
+                }
+              },
+              Critico: {
+                type: "line",
+                yMin: 5001,
+                yMax: 5001,
                 borderColor: "red",
-                borderWidth: 1
+                borderWidth: 1,
+                display: (context) => {
+                  return context.chart.data.datasets.some(dataset =>
+                    dataset.data.some(valor =>
+                      typeof valor === "number" &&
+                      Number.isFinite(valor) &&
+                      valor >= 5001
+                    )
+                  );
+                }
               },
             }
           },
