@@ -59,7 +59,7 @@
 
         <div class="campo">
           <img src="assets/icons/lock.svg" alt="">
-          <input type="password" placeholder="*******************" id="ipt_senha">
+          <input type="password" placeholder="digite sua senha" id="ipt_senha">
         </div>
         <div id="div_msg_senha"></div>
 
@@ -92,6 +92,7 @@
       div_msg_email.innerHTML = `<p style='color:red; font-size: 10px'>Digite um e-mail válido</p>`
       emailValido = false;
     } else {
+      div_msg_email.innerHTML = '';
       emailValido = true;
     }
 
@@ -103,7 +104,6 @@
       div_msg_senha.innerHTML = `<p style="color:red; font-size:10px">senha incorreta</p>`;
       senhaValida = false;
     } else {
-      div_msg_senha.innerHTML = "";
       senhaValida = true;
     }
     if (emailValido && senhaValida) {
