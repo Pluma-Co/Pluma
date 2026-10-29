@@ -92,7 +92,7 @@ nav a {
       rgba(16, 37, 34, 0.35) 65%,
       rgba(16, 37, 34, 0.05) 100%
     ),
-    url("../assets/banner_principal.png");
+    url("../assets/banner_home2.jpg");
 
   background-size: cover;
   background-position: center;
@@ -413,7 +413,18 @@ nav a {
 /* =========================================================
    QUEM SOMOS
 ========================================================= */
+.dadosQuemSomos{
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  font-size: 2vh;
+}
+.cardQuemSomos span{
+  color: #2dda16;
+  font-size: 39px;
+  font-weight: 700;
 
+}
 .sobre-nos {
   width: 100%;
   min-height: 370px;
