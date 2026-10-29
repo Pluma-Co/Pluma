@@ -634,3 +634,77 @@ header {
 /* Footer */
 
 
+footer {
+  background: linear-gradient(180deg, #FFFFFF 0%, #42FF00 100%);
+  padding: 60px 80px;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  overflow: hidden; 
+}
+
+.topo-footer, .conteudo-footer {
+  position: relative;
+  z-index: 2; 
+}
+
+.topo-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 50px;
+}
+
+.logo-escura {
+  width: 140px;
+  margin-bottom: 0px;
+  margin-left: -30px; 
+}
+
+.topo-footer p {
+  color: #023618;
+  font-size: 12px;
+  margin: 0;
+}
+
+.conteudo-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.conteudo-footer h3 {
+  color: #023618;
+  font-size: 15px;
+  text-transform: uppercase;
+  margin: 0 0 15px 0;
+}
+
+.conteudo-footer a, 
+.conteudo-footer p {
+  display: block;
+  color: #023618;
+  text-decoration: none;
+  font-size: 14px;
+  margin: 0 0 10px 0;
+}
+
+.conteudo-footer a:hover {
+  text-decoration: solid;
+}
+
+.icone {
+  width: 35px;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.logo-fundo {
+  width: 700px;
+  opacity: 0.55;
+  position: absolute;
+  bottom: -140px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 1;
+  pointer-events: none;
+}
