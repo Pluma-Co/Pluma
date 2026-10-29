@@ -20,7 +20,7 @@ body {
 ========================================================= */
 
 nav {
-  height: 60px;
+  height: 90px;
 
   display: flex;
   justify-content: space-evenly;
@@ -701,57 +701,4 @@ nav a {
   margin-top: 30px;
   padding-top: 15px;
   font-size: 12px;
-}
-
-
-/* CABEÇALHO MINIMALISTA */
-
-nav {
-    display: flex;
-    align-items: center;
-    padding: 9px 9%;
-    gap: 25px;
-}
-
-/* Logo */
-.logonav {
-    width: 90px;
-}
-
-/* Home próxima da logo */
-.nav-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-left: 5px;
-}
-
-.nav-item a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 15px;
-}
-
-/* Cadastro e Login à direita */
-.btn {
-    display: flex;
-    align-items: center;
-    gap: 25px;
-    margin-left: auto;
-}
-
-/* Texto branco, sem fundo de botão */
-.btn_nav {
-    background: transparent;
-    border: none;
-    color: white;
-    font-size: 15px;
-    font-weight: bold;
-    cursor: pointer;
-    padding: 8px 0;
-}
-
-.btn_nav:hover {
-    color: #a8d957;
 }

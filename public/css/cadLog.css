@@ -4,7 +4,6 @@
   box-sizing: border-box;
 }
 
-
 body {
   font-family: "Poppins", sans-serif;
   color: #333333;
@@ -100,47 +99,4 @@ button {
 
   color: #133830;
   font-weight: 600;
-}
-
-
-/* Cabeçalho */
-.cabecalho-pluma {
-    background-color: white;
-    padding: 15px 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.marca-nome {
-    font-size: 24px;
-    font-weight: bold;
-    color: #123f32;
-}
-
-.navegacao a {
-    margin-left: 15px;
-    color: #123f32;
-    text-decoration: none;
-}
-
-/* Botão Entrar */
-.btn-entrar {
-    background-color: #123f32;
-    color: white !important;
-    padding: 8px 15px;
-    border-radius: 5px;
-}
-
-/* Rodapé */
-.rodape-pluma {
-    background-color: #123f32;
-    color: white;
-    text-align: center;
-    padding: 15px;
-}
-
-.rodape-pluma p {
-    margin: 0;
-    font-size: 12px;
 }
