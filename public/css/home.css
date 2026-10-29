@@ -706,3 +706,84 @@ footer {
   z-index: 1;
   pointer-events: none;
 }
+
+/* Sustentabilidade */
+
+.sustentabilidade-section {
+  display: flex;
+  background-color: #000000;
+  color: #ffffff;
+  margin: 80px 0;
+  min-height: 400px;
+  overflow: hidden;
+}
+
+.imgSustentabilidade-left {
+  flex: 0 0 35%;
+  position: relative;
+}
+
+.imgSustentabilidade-left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.imgSustentabilidade-left::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, #000000);
+}
+
+.sustentabilidade-container {
+  flex: 1;
+  padding: 60px 60px 60px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sustentabilidade-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 1000px;
+}
+
+.sustentabilidade-card {
+  flex: 1 1 0;
+  min-width: 200px;
+}
+
+.sustentabilidade-card h1 {
+  font-size: 56px;
+  font-weight: 700;
+  margin: 0 0 15px 0;
+  color: #ffffff;
+}
+
+.sustentabilidade-card p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #c9c9c9;
+  margin: 0;
+}
+
+.sustentabilidade-info hr {
+  flex: 0 0 100%;
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  margin: 25px 0 10px 0;
+}
+
+.sustentabilidade-info > p:last-child {
+  flex: 0 0 100%;
+  font-size: 13px;
+  color: #c9c9c9;
+  margin: 0;
+}
