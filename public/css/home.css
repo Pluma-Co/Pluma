@@ -200,7 +200,6 @@ header {
     gap: 60px;
 }
 
-/* Lado Esquerdo */
 .aboutUs-left {
     flex: 1;
     max-width: 500px;
@@ -265,7 +264,6 @@ header {
     font-size: 20px;
 }
 
-/* Lado Direito (Cards) */
 .aboutUs-right {
     flex: 1;
     display: flex;
@@ -374,7 +372,6 @@ header {
     background-color: #1F4647;
 }
 
-/* Container dos Cartões */
 .card-calculadora {
     width: 100%;
     max-width: 750px; 
@@ -384,7 +381,6 @@ header {
     align-items: center;
 }
 
-/* Cartões Individuais */
 .card-metano, 
 .card-venda, 
 .card-resultadoCalculadora {
@@ -632,7 +628,6 @@ header {
 }
 
 /* Footer */
-
 
 footer {
   background: linear-gradient(180deg, #FFFFFF 0%, #42FF00 100%);

@@ -15,6 +15,7 @@
   </head>
 
   <body>
+    
     <!-- Navbar -->
     <header>
       <nav class="navbar">
@@ -33,234 +34,237 @@
       </nav>
     </header>
 
-    <!-- entrada sessão -->
-    <section class="entrada-section">
-      <div class="entrada-content">
-        <a href="#simulador" class="icon-simulador"> Simule agora </a>
+    <!-- entrada seção -->
+    <main>
+      <section class="entrada-section">
+        <div class="entrada-content">
+          <a href="#simulador" class="icon-simulador"> Simule agora </a>
 
-        <h1 class="entrada-title">
-          Menos vazamentos, menos perdas,<br />
-          mais eficiência<br />
-          seja <span class="text-green-pluma">Pluma</span>
-        </h1>
+          <h1 class="entrada-title">
+            Menos vazamentos, menos perdas,<br />
+            mais eficiência<br />
+            seja <span class="text-green-pluma">Pluma</span>
+          </h1>
 
-        <div class="contato-container">
-          <form class="email-form">
-            <input type="email" placeholder="E-mail" />
-            <button type="submit">Get start free</button>
-          </form>
-        </div>
-      </div>
-
-      <!-- Imagem do Dashboard-->
-      <div class="dashboard-img">
-        <img
-          src="assets/metricas.png"
-          alt="Imagem Métricas"
-          class="img-metricas"
-        />
-        <img
-          src="assets/Dashboard.png"
-          alt="Interface do Dashboard Pluma"
-          class="img-dashboard"
-        />
-      </div>
-    </section>
-
-    <!-- Seção About Us -->
-    <section class="aboutUs-section">
-      <div class="aboutUs-container">
-        <!-- Lado Esquerdo -->
-        <div class="aboutUs-left">
-          <div class="info-energia">
-            <img src="assets/plant.png" alt="Ícone folha" />
-            <h4>ENERGIA LIMPA E ECONOMIA CIRCULAR</h4>
-          </div>
-
-          <h2>
-            Proteja Cada m³, Maximize Seu
-            <span class="aboutUs-span">Biometano</span>.
-          </h2>
-
-          <p>
-            Monitoramento inteligente em tempo real para prevenir vazamentos,
-            garantir conformidade regulatória e assegurar máxima rentabilidade
-            do seu estoque 24/7.
-          </p>
-
-          <button class="btn-aboutUs">
-            Entre em contato
-            <span class="seta-icon">→</span>
-          </button>
-        </div>
-
-        <div class="aboutUs-right">
-          <div class="card-aboutUsRight">
-            <div class="card-icon">
-              <img src="assets/analise.png" alt="Ícone Monitoramento" />
-            </div>
-            <div class="card-text">
-              <h4>Monitoramento contínuo</h4>
-              <p>
-                Sensores acompanham compressores, purificação e armazenamento 24
-                horas por dia.
-              </p>
-            </div>
-          </div>
-
-          <div class="card-aboutUsRight">
-            <div class="card-icon">
-              <img src="assets/avisos.png" alt="Ícone Avisos" />
-            </div>
-            <div class="card-text">
-              <h4>Avisos na hora</h4>
-              <p>
-                Alertas de vazamento moderado ou crítico chegam antes de a perda
-                crescer.
-              </p>
-            </div>
-          </div>
-
-          <div class="card-aboutUsRight">
-            <div class="card-icon">
-              <img src="assets/dados.png" alt="Ícone Dados" />
-            </div>
-            <div class="card-text">
-              <h4>Dados que viram decisão</h4>
-              <p>
-                Volume perdido, duração e impacto financeiro de cada ocorrência,
-                em um só painel.
-              </p>
-            </div>
+          <div class="contato-container">
+            <form class="email-form">
+              <input type="email" placeholder="E-mail" />
+              <button type="submit">Get start free</button>
+            </form>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- CALCULADORA -->
-
-    <section class="calculadora-section" id="simulador">
-      <h2>
-        Simule e veja quanto <br />
-        <span class="econo-span"> você economiza de verdade</span>.
-      </h2>
-      <div class="topoCalculator">
-        <button class="finaceiro" id="financeiro">Financeiro</button>
-        <button class="produto" id="produto">Produto</button>
-        <button class="detalhado" id="detalhado">Detalhado</button>
-      </div>
-      <div class="card-calculadora">
-        <div class="card-metano">
-          <h4>Metano Produzido por mês(M³)</h4>
-          <input type="text" id="ipt_metano" placeholder="0" />
-          <hr />
+        <!-- Imagem do Dashboard-->
+        <div class="dashboard-img">
+          <img
+            src="assets/metricas.png"
+            alt="Imagem Métricas"
+            class="img-metricas"
+          />
+          <img
+            src="assets/Dashboard.png"
+            alt="Interface do Dashboard Pluma"
+            class="img-dashboard"
+          />
         </div>
-        <div class="card-venda">
-          <h4>Valor de venda do m³(R$)</h4>
-          <input type="text" id="ipt_venda" placeholder="0,00" />
-          <hr />
-        </div>
-        <div class="card-resultadoCalculadora">
-          <div class="economiza">
-            <h4>Você economiza com a <span>Pluma</span></h4>
-          </div>
-          <div class="exibir-resultado">
-            <div class="calculo-resultado">
-              <h1 class="resultadoCalculadora" id="resultadoCalculadora">
-                <span>R$</span> 0,00
-              </h1>
-              <h5>Economia anual potencial</h5>
-            </div>
-          </div>
-          <hr />
+      </section>
 
-          <div class="exibir-mensal">
-            <div class="metanoPerdidoMes">
-              <h5>Metano perdido / Mês:</h5>
-              <h5 class="conteudo-metano" id="metanoMensal">00,00 M³</h5>
+      <!-- Seção About Us -->
+      <section class="aboutUs-section">
+        <div class="aboutUs-container">
+          <!-- Lado Esquerdo -->
+          <div class="aboutUs-left">
+            <div class="info-energia">
+              <img src="assets/plant.png" alt="Ícone folha" />
+              <h4>ENERGIA LIMPA E ECONOMIA CIRCULAR</h4>
             </div>
-            <div class="perdaMensal">
-              <h5>Perda Mensal:</h5>
-              <h5 class="perda-mensal" id="perdaMensal">
-                <span>R$</span> 0,00
-              </h5>
+
+            <h2>
+              Proteja Cada m³, Maximize Seu
+              <span class="aboutUs-span">Biometano</span>.
+            </h2>
+
+            <p>
+              Monitoramento inteligente em tempo real para prevenir vazamentos,
+              garantir conformidade regulatória e assegurar máxima rentabilidade
+              do seu estoque 24/7.
+            </p>
+
+            <button class="btn-aboutUs">
+              Entre em contato
+              <span class="seta-icon">→</span>
+            </button>
+          </div>
+
+          <div class="aboutUs-right">
+            <div class="card-aboutUsRight">
+              <div class="card-icon">
+                <img src="assets/analise.png" alt="Ícone Monitoramento" />
+              </div>
+              <div class="card-text">
+                <h4>Monitoramento contínuo</h4>
+                <p>
+                  Sensores acompanham compressores, purificação e armazenamento
+                  24 horas por dia.
+                </p>
+              </div>
+            </div>
+
+            <div class="card-aboutUsRight">
+              <div class="card-icon">
+                <img src="assets/avisos.png" alt="Ícone Avisos" />
+              </div>
+              <div class="card-text">
+                <h4>Avisos na hora</h4>
+                <p>
+                  Alertas de vazamento moderado ou crítico chegam antes de a
+                  perda crescer.
+                </p>
+              </div>
+            </div>
+
+            <div class="card-aboutUsRight">
+              <div class="card-icon">
+                <img src="assets/dados.png" alt="Ícone Dados" />
+              </div>
+              <div class="card-text">
+                <h4>Dados que viram decisão</h4>
+                <p>
+                  Volume perdido, duração e impacto financeiro de cada
+                  ocorrência, em um só painel.
+                </p>
+              </div>
             </div>
           </div>
         </div>
-        <button class="contactUs">Contact Us</button>
-      </div>
-    </section>
+      </section>
 
-    <!-- Seção Duvidas -->
+      <!-- Calculadora -->
 
-    <section class="duvidas-section">
-      <div class="duvidas-container">
-        <h1>
-          <span class="duvidas-span"> Tem duvidas?</span> <br />
-          Nós te explicamos
-        </h1>
-        <div class="cardDuvidas-container">
-          <div class="duvidas-card">
-            <div class="duvidas-pergunta">
-              <p>Como detectamos vazamentos?</p>
-              <img src="assets/mais.png" alt="" class="icone-mais"/>
+      <section class="calculadora-section" id="simulador">
+        <h2>
+          Simule e veja quanto <br />
+          <span class="econo-span"> você economiza de verdade</span>.
+        </h2>
+        <div class="topoCalculator">
+          <button class="finaceiro" id="financeiro">Financeiro</button>
+          <button class="produto" id="produto">Produto</button>
+          <button class="detalhado" id="detalhado">Detalhado</button>
+        </div>
+        <div class="card-calculadora">
+          <div class="card-metano">
+            <h4>Metano Produzido por mês(M³)</h4>
+            <input type="text" id="ipt_metano" placeholder="0" />
+            <hr />
+          </div>
+          <div class="card-venda">
+            <h4>Valor de venda do m³(R$)</h4>
+            <input type="text" id="ipt_venda" placeholder="0,00" />
+            <hr />
+          </div>
+          <div class="card-resultadoCalculadora">
+            <div class="economiza">
+              <h4>Você economiza com a <span>Pluma</span></h4>
             </div>
-            <div class="duvidas-resposta">
-              <p>
-                Utilizamos sensores IoT que monitoram continuamente os níveis de
-                biometano nos reservatórios, enviando dados em tempo real para o
-                dashboard da Pluma.
-              </p>
+            <div class="exibir-resultado">
+              <div class="calculo-resultado">
+                <h1 class="resultadoCalculadora" id="resultadoCalculadora">
+                  <span>R$</span> 0,00
+                </h1>
+                <h5>Economia anual potencial</h5>
+              </div>
+            </div>
+            <hr />
+
+            <div class="exibir-mensal">
+              <div class="metanoPerdidoMes">
+                <h5>Metano perdido / Mês:</h5>
+                <h5 class="conteudo-metano" id="metanoMensal">00,00 M³</h5>
+              </div>
+              <div class="perdaMensal">
+                <h5>Perda Mensal:</h5>
+                <h5 class="perda-mensal" id="perdaMensal">
+                  <span>R$</span> 0,00
+                </h5>
+              </div>
             </div>
           </div>
-          <div class="duvidas-card">
-            <div class="duvidas-pergunta">
-              <p>O que é biometano?</p>
-              <img src="assets/mais.png" alt="Expandir" class="icone-mais"/>
-            </div>
-            <div class="duvidas-resposta">
-              <p>
-                É um biocombustível gasoso obtido a partir da purificação do
-                biogás, essencial para a economia circular e geração de energia
-                limpa.
-              </p>
-            </div>
-          </div>
+          <button class="contactUs">Contact Us</button>
+        </div>
+      </section>
 
-          <div class="duvidas-card">
-            <div class="duvidas-pergunta">
-              <p>Como nossa solução te ajuda?</p>
-              <img src="assets/mais.png" alt="Expandir" class="icone-mais" />
-            </div>
-            <div class="duvidas-resposta">
-              <p>
-                Prevenimos perdas financeiras alertando sobre vazamentos
-                instantaneamente, garantindo a conformidade regulatória e a
-                rentabilidade do seu estoque.
-              </p>
-            </div>
-          </div>
+      <!-- Seção Duvidas -->
 
-          <div class="duvidas-card">
-            <div class="duvidas-pergunta">
-              <p>A atualização é ao vivo?</p>
-              <img src="assets/mais.png" alt="Expandir" class="icone-mais" />
+      <section class="duvidas-section">
+        <div class="duvidas-container">
+          <h1>
+            <span class="duvidas-span"> Tem duvidas?</span> <br />
+            Nós te explicamos
+          </h1>
+          <div class="cardDuvidas-container">
+            <div class="duvidas-card">
+              <div class="duvidas-pergunta">
+                <p>Como detectamos vazamentos?</p>
+                <img src="assets/mais.png" alt="" class="icone-mais" />
+              </div>
+              <div class="duvidas-resposta">
+                <p>
+                  Utilizamos sensores IoT que monitoram continuamente os níveis
+                  de biometano nos reservatórios, enviando dados em tempo real
+                  para o dashboard da Pluma.
+                </p>
+              </div>
             </div>
-            <div class="duvidas-resposta">
-              <p>
-                Sim, o sistema captura e exibe os dados operacionais 24 horas
-                por dia, 7 dias por semana no seu painel.
-              </p>
+            <div class="duvidas-card">
+              <div class="duvidas-pergunta">
+                <p>O que é biometano?</p>
+                <img src="assets/mais.png" alt="Expandir" class="icone-mais" />
+              </div>
+              <div class="duvidas-resposta">
+                <p>
+                  É um biocombustível gasoso obtido a partir da purificação do
+                  biogás, essencial para a economia circular e geração de
+                  energia limpa.
+                </p>
+              </div>
+            </div>
+
+            <div class="duvidas-card">
+              <div class="duvidas-pergunta">
+                <p>Como nossa solução te ajuda?</p>
+                <img src="assets/mais.png" alt="Expandir" class="icone-mais" />
+              </div>
+              <div class="duvidas-resposta">
+                <p>
+                  Prevenimos perdas financeiras alertando sobre vazamentos
+                  instantaneamente, garantindo a conformidade regulatória e a
+                  rentabilidade do seu estoque.
+                </p>
+              </div>
+            </div>
+
+            <div class="duvidas-card">
+              <div class="duvidas-pergunta">
+                <p>A atualização é ao vivo?</p>
+                <img src="assets/mais.png" alt="Expandir" class="icone-mais" />
+              </div>
+              <div class="duvidas-resposta">
+                <p>
+                  Sim, o sistema captura e exibe os dados operacionais 24 horas
+                  por dia, 7 dias por semana no seu painel.
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
+    <!-- Footer -->
     <footer>
       <div class="topo-footer">
-        <img src="assets/logoEscura.png" alt="" class="logo-escura">
-        <p>Pluma - Copyright© 2026  |  Desenvolvido pelo Grupo 1 de PI - 1ADSB </p>
+        <img src="assets/logoEscura.png" alt="" class="logo-escura" />
+        <p>Pluma - Copyright© 2026 | Desenvolvido pelo Grupo 1 de PI - 1ADSB</p>
       </div>
       <div class="conteudo-footer">
         <div class="inicio-footer">
@@ -276,12 +280,11 @@
         </div>
         <div class="final-footer">
           <h3>Redes Sociais</h3>
-          <img src="assets/linkedin.png" alt="">
-          <img src="assets/whatsapp" alt="">
+          <img src="assets/linkedin.png" alt="" />
+          <img src="assets/whatsapp" alt="" />
         </div>
-
       </div>
-      <img src="assets/logoBranca.png" alt="" class="logo-fundo">
+      <img src="assets/logoBranca.png" alt="" class="logo-fundo" />
     </footer>
 
     <script src="script.js"></script>
