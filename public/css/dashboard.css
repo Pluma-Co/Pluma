@@ -100,6 +100,17 @@ main {
     cursor: pointer;
 }
 
+.btn_filtro.selecionado {
+    background-color: #164636E6;
+    opacity: 0.90;
+    font-weight: 500;
+    border-radius: 100px;
+    width: 150px;
+    height: 28px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
 /* KPIs */
 #div_kpis {
     display: flex;

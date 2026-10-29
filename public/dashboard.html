@@ -69,14 +69,14 @@
         <span class="header_span">Selecione a usina:</span>
         <select id="select_usina">
           <option value="" selected disabled></option>
-          <option value="">Usina de Teste</option>
+          <option value="" selected>Usina de Teste</option>
         </select>
       </div>
       <div id="header_filtro">
         <span class="header_span">Selecione um período:</span>
         <button id="btn_hoje" class="btn_filtro">Hoje</button>
         <button id="btn_semana" class="btn_filtro">Esta semana</button>
-        <button id="btn_mes" class="btn_filtro">Últimos 30 dias</button>
+        <button id="btn_mes" class="btn_filtro selecionado">Últimos 30 dias</button>
       </div>
     </div>
     <div id="div_kpis">
@@ -101,7 +101,7 @@
       </div>
       <div class="div_kpi">
         <p class="titulo_kpi">Tempo Médio de Reparo</p>
-        <p id="valor_mediaReparo" class="dado_kpi">44h</p>
+        <p id="valor_mediaReparo" class="dado_kpi">6h</p>
         <p class="descricao_kpi"><span id="percente_mediaReparo" style="color: red; font-weight: bolder;">10%</span>
           acima do esperado</p>
       </div>
@@ -121,7 +121,7 @@
               <p class="status_subtitulo info_kpi">Armazenamento</p>
             </div>
             <span class="status_subtitulo">Vazamento Atual<br>
-              <span id="vazamento_critico">120,1 ppm</span>
+              <span id="vazamento_critico">8433 ppm</span>
             </span>
             <span class="status_subtitulo">Status<br>
               <span id="status_critico">Crítico</span>
@@ -135,7 +135,7 @@
               <p class="status_subtitulo info_kpi">Purificação</p>
             </div>
             <span class="status_subtitulo">Vazamento Atual<br>
-              <span id="vazamento_moderado">55,1 ppm</span>
+              <span id="vazamento_moderado">3787 ppm</span>
             </span>
             <span class="status_subtitulo">Status<br>
               <span id="status_moderado">Moderado</span>
@@ -149,10 +149,10 @@
               <p class="status_subtitulo info_kpi">Compressor</p>
             </div>
             <span class="status_subtitulo">Vazamento Atual<br>
-              <span id="vazamento_leve">4,1 ppm</span>
+              <span id="vazamento_leve">340 ppm</span>
             </span>
             <span class="status_subtitulo">Status<br>
-              <span id="status_leve">leve</span>
+              <span id="status_leve">Leve</span>
             </span>
           </div>
         </div>
@@ -181,22 +181,25 @@
         datasets: [
           {
             label: "Armazenamento",
-            data: [960.2, 0, 260.1, 890.5, 980.5, 630.8],
+            data: [7302, 4533, 4364, 6758, 8675, 8433],
             borderWidth: 3,
+            pointRadius: 2,
             backgroundColor: "rgb(112, 110, 231)",
             borderColor: "rgb(112, 110, 231)",
           },
           {
             label: "Purificação",
-            data: [310.5, 350.6, 460, 900.2, 900.7, 400.6],
+            data: [2538, 4737, 2353, 3643, 2352, 3787],
             borderWidth: 3,
+            pointRadius: 2,
             backgroundColor: "rgb(85, 196, 174)",
             borderColor: "rgb(85, 196, 174)",
           },
           {
             label: "Compressor",
-            data: [880.5, 170.5, 820.4, 580, 260.8, 530.8],
+            data: [880, 170, 820, 580, 260, 340],
             borderWidth: 3,
+            pointRadius: 2,
             backgroundColor: "rgb(255, 146, 138)",
             borderColor: "rgb(255, 146, 138)",
           },
@@ -288,8 +291,8 @@
         labels: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"],
         datasets: [
           {
-            label: "ppm",
-            data: [15, 35, 45, 180, 45, 30, 30, 160, 15, 15, 7, 150],
+            label: "m³",
+            data: [15, 35, 45, 180, 45, 30, 30, 78, 200, 184, 0, 0],
             borderWidth: 3,
             backgroundColor: "rgb(52, 107, 9)",
             borderColor: "rgb(52, 107, 9)",
@@ -317,7 +320,7 @@
           },
           title: {
             display: true,
-            text: "Vazamento por Mês (ppm)",
+            text: "Vazamento por Mês (m³)",
             color: "#235347",
             font: {
               size: 18,
@@ -332,12 +335,9 @@
         scales: {
           y: {
             beginAtZero: true,
-            ticks: {
-              stepSize: 30
-            },
             title: {
               display: true,
-              text: "Vazamento (ppm)"
+              text: "Vazamento (m³)"
             }
           }
         }
@@ -351,7 +351,7 @@
         datasets: [
           {
             label: "m³",
-            data: [180, 70, 55],
+            data: [120, 53, 11],
             borderWidth: 3,
             backgroundColor: "rgb(52, 107, 9)",
             borderColor: "rgb(52, 107, 9)",
@@ -370,8 +370,8 @@
             annotations: {
               meta: {
                 type: "line",
-                xMin: 75,
-                xMax: 75,
+                xMin: 20,
+                xMax: 20,
                 borderColor: "red",
                 borderWidth: 1
               },
@@ -395,13 +395,9 @@
         scales: {
           x: {
             beginAtZero: true,
-            max: 200,
-            ticks: {
-              stepSize: 50
-            },
             title: {
               display: true,
-              text: ""
+              text: "Vazamento (m³)"
             }
           }
         }
