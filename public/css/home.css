@@ -790,3 +790,154 @@ footer {
 
 /* Seção contato */
 
+.contato-section {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  padding: 60px 40px;
+  font-family: 'Montserrat', sans-serif;
+  color: #1F4647;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contato-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  justify-content: center;
+}
+
+.contato-inicio h3 {
+  font-size: 48px;
+  font-weight: 900;
+  margin: 0 0 5px 0;
+}
+
+.contato-inicio p {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.contato-inicio p span {
+  color: #42FF00;
+}
+
+.contato-meio h4 {
+  font-size: 28px;
+  font-style: italic;
+  font-weight: 800;
+  margin: 0 0 10px 0;
+}
+
+.contato-meio p {
+  font-size: 16px;
+  font-style: italic;
+  text-decoration: underline;
+  margin: 0;
+}
+
+.contato-fim {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+#contato-redes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+#contato-redes h3 {
+  flex-basis: 100%;
+  font-size: 28px;
+  font-weight: 800;
+  margin: 0 0 15px 0;
+}
+
+#contato-redes img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+#contato-redes p {
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.contato-right {
+  flex: 1;
+  background-color: #f1fbf1;
+  border-radius: 30px;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contato-right form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.contato-campos {
+  display: flex;
+  flex-direction: column;
+}
+
+.contato-campos p {
+  color: #42FF00;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 16px;
+  margin: 0 0 10px 0;
+}
+
+.contato-campos input,
+.contato-campos textarea {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  color: #1F4647;
+  padding: 0 0 10px 0;
+}
+
+.contato-campos textarea {
+  resize: none;
+  height: 70px;
+}
+
+.contato-campos input::placeholder,
+.contato-campos textarea::placeholder {
+  opacity: 0;
+}
+
+.contato-campos hr {
+  border: none;
+  border-bottom: 1px solid #9fb9a6;
+  margin: 0;
+  width: 100%;
+}
+
+.btn-contato {
+  align-self: flex-end;
+  background-color: #1F4647;
+  color: #ffffff;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 40px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-style: italic;
+  cursor: pointer;
+  margin-top: 10px;
+}
