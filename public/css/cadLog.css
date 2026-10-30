@@ -88,6 +88,13 @@ button {
   cursor: pointer;
 }
 
+button {
+transition: all 0.2s;
+
+}
+
+
+
 .esqueceu {
   margin-top: 25px;
   font-size: 12px;
@@ -99,4 +106,33 @@ button {
 
   color: #133830;
   font-weight: 600;
+}
+
+.btn-cadastro{
+  border-radius: 5px;
+  padding: 8px 20px; 
+  border: 1px solid #ffffff; 
+  color: #ffffff;
+  text-decoration: none; 
+  font-weight: 600; 
+  font-size: 14px;
+}
+
+.btn-cadastro:hover{
+  background-color: rgb(0, 128, 32);
+}
+
+.btn-login{
+  border-radius: 5px;
+  padding: 8px 20px; 
+  border: 1px solid #ffffff; 
+  color: #ffffff;
+  text-decoration: none; 
+  font-weight: 600; 
+  font-size: 14px;
+}
+
+.btn-login:hover{
+    background-color: rgb(0, 128, 32);
+
 }
