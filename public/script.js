@@ -22,6 +22,9 @@ function financeiro() {
     metanoMensal.innerHTML = `${perdaMetano.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} M³`;
     
     perdaMensal.innerHTML = `<span>R$</span> ${perdaMensalReal.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+
+    resultadoDetalhado.innerHTML = `Em 12 Meses, são ${perdaAnual.toLocaleString('pt-BR', {minimumFractionDigits:2, maximumFractionDigits:2})} em gás que sai pela atmosfera em vez de virar faturamento. É o mesmo que ficar ${dias} dias por ano sem vender nada. <br> 
+    Em usinas com detecção contínua e reparo rápido, a perda medida cai para cerca de 0,5%. A diferença pode voltar para o seu caixa: R$ ${economia.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} por ano.`
 }
 
 ipt_metano.addEventListener('input', financeiro, );

@@ -506,9 +506,16 @@ header {
     color: #CBD5E0;
     margin-bottom: 5px;
 }
+.detalhado{
+    font-size: 13px;
+    font-weight: 400;
+    color: #CBD5E0;
+    text-align: left;
+}
 
 .conteudo-metano, 
-.perda-mensal {
+.perda-mensal,
+.conteudo-perdaProducao {
     color: #42FF00 ;
     font-weight: 700 ;
     font-size: 15px ;
