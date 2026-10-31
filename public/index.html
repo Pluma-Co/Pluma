@@ -199,31 +199,63 @@
             </div>
         </section>
         <!-- CALCULADORA -->
-        <section class="calculadora" id="calculadora">
-            <h2>
-                Simule e veja o quanto você economiza de verdade.
-            </h2>
-            <div class="opcoesCalculadora">
-                <a href=""> Financeiro</a><a href="">Produto</a><a href="">Detalhado</a>
+        <section class="calculadora-section" id="simulador">
+        <h2>
+          Simule e veja quanto <br />
+          <span class="econo-span"> você economiza de verdade</span>.
+        </h2>
+        <div class="topoCalculator">
+          <button class="finaceiro" id="financeiro">Financeiro</button>
+        </div>
+        <div class="card-calculadora">
+          <div class="card-metano">
+            <h4>Metano Produzido por mês(M³)</h4>
+            <input type="text" id="ipt_metano" placeholder="0" />
+            <hr />
+          </div>
+          <div class="card-venda">
+            <h4>Valor de venda do M³(R$)</h4>
+            <input type="text" id="ipt_venda" placeholder="R$ 0,00" />
+            <hr />
+          </div>
+          <div class="card-resultadoCalculadora">
+            <div class="economiza">
+              <h4>Você economiza com a <span>Pluma</span></h4>
             </div>
-            <div class="campoMetano">
-                <h4>Metano Produzido por mês(M³)</h4>
-                <h3 id="metanoProduzido"></h3>
-                <hr>
+            <div class="exibir-resultado">
+              <div class="calculo-resultado">
+                <h1 class="resultadoCalculadora" id="resultadoCalculadora">
+                  <span>R$</span> 0,00
+                </h1>
+                <h5>Economia anual potencial</h5>
+              </div>
             </div>
-            <div class="campoVenda">
-                <h4>Valor de venda do m³(R$)</h4>
-                <h3 id="valorVenda">R$ 0,00</h3>
-                <hr>
+            <hr />
+
+            <div class="exibir-mensal">
+              <div class="metanoPerdidoMes">
+                <h5>Metano perdido / Ano:</h5>
+                <h5 class="conteudo-metano" id="metanoMensal">00,00 M³</h5>
+              </div>
+              <div class="perdaMensal">
+                <h5>Perda Mensal:</h5>
+                <h5 class="perda-mensal" id="perdaMensal">
+                  <span>R$</span> 0,00
+                </h5>
+              </div>
+              <div class="perdaProducao">
+                <h5>Perda da produção:</h5>
+                <h5 class="conteudo-perdaProducao" id="perdaProducao">5%</h5>
+              </div>
             </div>
-            <div class="campoPerda">
-                <h1 id="perdaMetano">Você economiza com o </h1>
-                <img src="assets/icone_perda.png" alt="Ícone de perda de metano">
-            </div>
-            <h4>Perda de metano por mês(M³)</h4>
-            <h3 id="perdaMetano"></h3>
             <hr>
-        </section>
+            <div class="detalhado" id="resultadoDetalhado">
+
+            </div>
+          </div>
+          <button class="contactUs">Contact Us</button>
+        </div>
+      </section>
         <!-- QUEM SOMOS -->
         <section class="sobre-nos" id="sobre-nos">
             <div class="sobre-imagem">
@@ -362,4 +394,39 @@
         </div>
     </footer>
 </body>
+<script>
+let percentualPerda = 0.05; 
+let percentualResidual = 0.005;
+
+function financeiro() {
+    let metano = Number(ipt_metano.value);
+    let preco = Number(ipt_venda.value);
+    let perdaMensalReal = metano * preco * percentualPerda;
+    let perdaAnual = perdaMensalReal * 12;
+    let perdaMetano = metano * percentualPerda;
+    let dias = (percentualPerda * 365).toFixed(0);
+    let economia = metano * (percentualPerda - percentualResidual) * preco * 12;
+
+    if (isNaN(metano) || isNaN(preco) || metano === 0 || preco === 0) {
+        resultadoCalculadora.innerHTML = `<span>R$</span> 0,00`;
+        metanoMensal.innerHTML = `0,00 M³`;
+        perdaMensal.innerHTML = `<span>R$</span> 0,00`;
+        return;
+    }
+
+    resultadoCalculadora.innerHTML = `<span>R$</span> ${economia.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+    
+    metanoMensal.innerHTML = `${perdaMetano.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} M³`;
+    
+    perdaMensal.innerHTML = `<span>R$</span> ${perdaMensalReal.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+
+    resultadoDetalhado.innerHTML = `Em 12 Meses, são ${perdaAnual.toLocaleString('pt-BR', {minimumFractionDigits:2, maximumFractionDigits:2})} em gás que sai pela atmosfera em vez de virar faturamento. É o mesmo que ficar ${dias} dias por ano sem vender nada. <br> 
+    Em usinas com detecção contínua e reparo rápido, a perda medida cai para cerca de 0,5%. A diferença pode voltar para o seu caixa: R$ ${economia.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} por ano.`
+}
+
+ipt_metano.addEventListener('input', financeiro, );
+ipt_venda.addEventListener('input', financeiro);
+
+// Usei de diferente as funções de transformação de valores para o Reak, o toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) e o addEventListener('input', financeiro) que atualiza o resultado enquanto a gente clica.
+</script>
 </html>
