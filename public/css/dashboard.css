@@ -73,7 +73,7 @@ main {
     width: 88vw;
     height: 7vh;
     padding: 0 5% 0 2%;
-    border-bottom: solid 1px #000000;
+    border-bottom: solid 1px #00000030;
 }
 
 .header_usuario {
@@ -87,7 +87,10 @@ main {
 }
 
 #select_usina {
-    border-radius: 5px;
+    border-radius: 20px;
+    border: 1px solid #00000030;
+    box-shadow: 0px 4px 4px #00000030;
+    padding: 5px;
 }
 
 .btn_filtro {
@@ -98,10 +101,12 @@ main {
     height: 28px;
     margin-right: 10px;
     cursor: pointer;
+    border: 1px solid #00000030;
 }
 
 .btn_filtro.selecionado {
     background-color: #164636E6;
+    color: #ffffff;
     opacity: 0.90;
     font-weight: 500;
     border-radius: 100px;
@@ -109,6 +114,8 @@ main {
     height: 28px;
     margin-right: 10px;
     cursor: pointer;
+    box-shadow: 0px 4px 4px #00000030;
+    border: 1px solid #00000030;
 }
 
 /* KPIs */
@@ -121,18 +128,27 @@ main {
 .div_kpi {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
     justify-content: space-evenly;
     width: 19vw;
-    height: 13vh;
-    border: 1px solid #000000;
-    border-radius: 5px;
+    height: 15vh;
+    border: 1px solid #00000030;
+    border-radius: 10px;
+    padding-left: 15px;
+    box-shadow: 0px 4px 4px #00000030;
+    box-sizing: border-box;
 }
 
 .titulo_kpi {
     font-size: 1.2vw;
-    color: #739086;
+    color: #164636;
     text-align: center;
+    font-weight: bold;
+}
+
+.descricao_kpi {
+    font-size: 15px;
+    color: #164636;
 }
 
 .dado_kpi {
@@ -163,7 +179,9 @@ main {
     width: 41vw;
     height: 35vh;
     padding: 10px;
-    border: 1px solid #164636;
+    border: 1px solid #00000030;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px #00000030;
 }
 
 .dashboard_grafico {
@@ -173,6 +191,7 @@ main {
 .kpi_vazamentosAtuais {
     flex-direction: column;
     justify-content: space-between;
+    gap: 20px;
 }
 
 #grafico_vazamentos {
@@ -185,8 +204,10 @@ main {
     justify-content: space-evenly;
     width: 37vw;
     height: 12vh;
-    border: 1px solid #000000;
+    border: 1px solid #00000030;
     border-radius: 10px;
+    gap: 10px;
+    box-shadow: 0px 4px 4px #00000030;
 }
 
 .status_cabecalho {
