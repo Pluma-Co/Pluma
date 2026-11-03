@@ -122,21 +122,3 @@ button {
   font-weight: 700;
 
 }
-
-/* NAVBAR EXCLUSIVA LOGIN E CADASTRO */
-
-header nav {
-    justify-content: flex-start;
-    gap: 40px;
-}
-
-.nav-home {
-    flex-shrink: 0;
-}
-
-header nav .btn {
-    margin-left: auto;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
