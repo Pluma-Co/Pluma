@@ -618,7 +618,7 @@ header {
 }
 
 .duvidas-resposta {
-    display: none;
+    display: flex;
     margin-top: 16px;
     color: #4A5568;
     font-size: 15px;
