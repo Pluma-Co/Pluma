@@ -5,6 +5,13 @@
     font-family: "Poppins", sans-serif;
 }
 
+html,
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
 body {
     display: flex;
 }
@@ -12,12 +19,16 @@ body {
 main {
     display: flex;
     flex-direction: column;
+    width: 88vw;
+    height: 100vh;
+    overflow: hidden;
 }
 
 /* Sidebar */
 #sidebar {
     width: 12vw;
     height: 100vh;
+    flex-shrink: 0;
     background-color: #164636;
     display: flex;
     flex-direction: column;
@@ -62,7 +73,8 @@ main {
 }
 
 .sidebar_paginas {
-    padding-left: 10%;
+    padding-left: 8px;
+    white-space: nowrap;
 }
 
 /* Header */
@@ -71,8 +83,8 @@ main {
     align-items: center;
     justify-content: space-between;
     width: 88vw;
-    height: 7vh;
-    padding: 0 5% 0 2%;
+    height: 6vh;
+    padding: 0 2vw;
     border-bottom: solid 1px #00000030;
 }
 
@@ -83,7 +95,7 @@ main {
 }
 
 .header_span {
-    padding-left: 25px;
+    padding-left: 1vw;
 }
 
 #select_usina {
@@ -97,8 +109,8 @@ main {
     background-color: #ffffff;
     font-weight: 500;
     border-radius: 100px;
-    width: 150px;
-    height: 28px;
+    width: 9.5vw;
+    height: 4vh;
     margin-right: 10px;
     cursor: pointer;
     border: 1px solid #00000030;
@@ -110,8 +122,8 @@ main {
     opacity: 0.90;
     font-weight: 500;
     border-radius: 100px;
-    width: 150px;
-    height: 28px;
+    width: 9.5vw;
+    height: 4vh;
     margin-right: 10px;
     cursor: pointer;
     box-shadow: 0px 4px 4px #00000030;
@@ -122,7 +134,7 @@ main {
 #div_kpis {
     display: flex;
     justify-content: space-evenly;
-    margin: 2vh 0;
+    margin: 1.5vh 0;
 }
 
 .div_kpi {
@@ -147,28 +159,24 @@ main {
 }
 
 .descricao_kpi {
-    font-size: 15px;
-    color: #164636;
+    font-size: 0.9vw;
+    color: #739086;
 }
 
 .dado_kpi {
-    font-size: 1.8vw;
+    font-size: 1.5vw;
     font-weight: bold;
     text-align: center;
     color: #164636;
 }
 
-.descricao_kpi {
-    font-size: 15px;
-    color: #739086;
-}
-
-/* Dashboard: gráficos e vazamentos atuais */
+/* Dashboard: gráficos e vazamentos atuais*/
 #div_dashboard {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    width: 90vw;
+    align-content: space-evenly;
+    width: 88vw;
     height: 76vh;
 }
 
@@ -176,8 +184,9 @@ main {
 .kpi_vazamentosAtuais {
     display: flex;
     align-items: center;
+    position: relative;
     width: 41vw;
-    height: 35vh;
+    height: 36vh;
     padding: 10px;
     border: 1px solid #00000030;
     border-radius: 10px;
@@ -191,7 +200,13 @@ main {
 .kpi_vazamentosAtuais {
     flex-direction: column;
     justify-content: space-between;
-    gap: 20px;
+    gap: 5px;
+}
+
+.kpi_vazamentosAtuais .titulo_kpi + p {
+    font-size: 14px;
+    font-weight: normal;
+    color: #164636;
 }
 
 #grafico_vazamentos {
@@ -203,7 +218,7 @@ main {
     display: flex;
     justify-content: space-evenly;
     width: 37vw;
-    height: 12vh;
+    height: 7.5vh;
     border: 1px solid #00000030;
     border-radius: 10px;
     gap: 10px;
@@ -219,7 +234,8 @@ main {
 
 .status_alerta {
     display: flex;
-    width: 170px;
+    align-items: center;
+    width: 13vw;
     justify-content: space-between;
 }
 
@@ -238,33 +254,29 @@ main {
     border-radius: 100%;
 }
 
-#circulo_critico{
+#circulo_critico {
     background-color: red;
 }
 
-#vazamento_critico, #status_critico{
+#vazamento_critico, #status_critico {
     font-weight: bolder;
     color: red;
 }
 
-#circulo_critico{
-    background-color: red;
-}
-
-#vazamento_moderado, #status_moderado{
+#vazamento_moderado, #status_moderado {
     font-weight: bolder;
     color: #FFCC00;
 }
 
-#circulo_moderado{
+#circulo_moderado {
     background-color: #FFCC00;
 }
 
-#vazamento_leve, #status_leve{
+#vazamento_leve, #status_leve {
     font-weight: bolder;
     color: #346B09;
 }
 
-#circulo_leve{
+#circulo_leve {
     background-color: #346B09;
 }
