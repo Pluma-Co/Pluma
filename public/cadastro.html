@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+
+  <title>Pluma | Cadastro</title>
+  <link rel="stylesheet" href="css/cadLog.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <!-- CABEÇALHO -->
+  <header>
+    <nav>
+      <img class="logonav" src="assets/logo_branca.png" alt="Logo Pluma">
+
+      <div class="nav-item">
+        <img class="iconenav" src="assets/icons/icon_home.png" alt="">
+
+        <a href="index.html">
+          Home
+        </a>
+      </div>
+      <div class="nav-item">
+        <img class="iconenav" src="assets/icons/icone_grupo.png" alt="">
+
+        <a href="index.html#sobre-nos">
+          Sobre Nós
+        </a>
+      </div>
+
+      <div class="btn">
+        <a href="login.html">
+          <button class="btn_login">
+            Login
+          </button>
+        </a>
+
+        <a href="cadastro.html">
+          <button class="btn_nav">
+            Cadastro
+          </button>
+        </a>
+
+      </div>
+    </nav>
+  </header>
+
+
+  <div class="container">
+
+    <!-- Lado esquerdo: logo -->
+    <div class="lado-esquerdo">
+      <img src="assets/logo_branca.png" alt="Pluma">
+    </div>
+
+    <!-- Lado direito: formulário -->
+    <div class="lado-direito">
+      <div class="formulario">
+        <h1>Olá!</h1>
+        <p>Cadastre-se e comece<br>agora a gestão da sua usina!</p>
+
+        <div class="campo">
+          <img src="assets/icons/icone-usina.svg" alt="">
+          <input type="text" placeholder="Código da empresa" id="ipt_codigo_empresa">
+        </div>
+        <div id="div_msg_codigo_usina"></div>
+
+        <div class="campo">
+          <img src="assets/icons/circle-user.svg" alt="">
+          <input type="text" placeholder="Nome Completo" id="ipt_nome">
+        </div>
+        <div id="div_msg_nome"></div>
+
+        <div class="campo">
+          <img src="assets/icons/icone_userkey.svg" alt="">
+          <input type="text" placeholder="Nome de usuário" id="ipt_username">
+        </div>
+        <div id="div_msg_username"></div>
+
+        <div class="campo">
+          <img src="assets/icons/mail.svg" alt="">
+          <input type="text" placeholder="seu@email.com" id="ipt_email">
+        </div>
+        <div id="div_msg_email"></div>
+
+        <div class="campo">
+          <img src="assets/icons/lock.svg" alt="">
+          <input type="password" placeholder="Senha" id="ipt_senha">
+        </div>
+        <div id="div_msg_senha"></div>
+
+        <div class="campo">
+          <img src="assets/icons/lock.svg" alt="">
+          <input type="password" placeholder="Confirme a Senha" id="ipt_confirmacao">
+        </div>
+        <div id="div_msg_confirmacao"></div>
+
+        <button onclick="cadastrar()">Cadastrar</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
+
+<script>
+
+  function cadastrar() {
+    let codigoEmpresa = ipt_codigo_empresa.value;
+    let nome = ipt_nome.value;
+    let username = ipt_username.value
+    let email = ipt_email.value;
+    let senha = ipt_senha.value;
+    let confirmacao = ipt_confirmacao.value;
+
+    let codigoEmpresaValido = true;
+    let nomeValido = true;
+    let usernameValido = true;
+    let emailValido = true;
+    let senhaValida = true;
+    let confirmacaoValida = true;
+
+
+    // validar usina
+    if (codigoEmpresa.length == 0) {
+      div_msg_codigo_usina.innerHTML = `<p style="color:red; font-size:10px">Digite o código da usina</p>`;
+      codigoEmpresaValido = false;
+    } else {
+      div_msg_codigo_usina.innerHTML = ``;
+    }
+
+    // validar nome
+    if (nome.length == 0) {
+      div_msg_nome.innerHTML = `<p style="color:red; font-size:10px">Digite seu nome completo</p>`;
+      nomeValido = false;
+    }
+    else {
+      div_msg_nome.innerHTML = ``;
+    }
+
+    // validar username 
+    if (username.length == 0) {
+      div_msg_username.innerHTML = `<p style="color:red; font-size:10px">Digite um nome de usuário</p>`;
+      usernameValido = false;
+    } else {
+      div_msg_username.innerHTML = ``;
+    }
+
+    // validar e-mail
+    if (!email.includes('@') || !email.includes('.')) {
+      div_msg_email.innerHTML = `<p style="color:red; font-size:10px">Digite um e-mail válido</p>`;
+
+      emailValido = false;
+
+    } else {
+      div_msg_email.innerHTML = ``;
+    }
+
+    // validar senha
+    if (senha.length <= 8) {
+      div_msg_senha.innerHTML = `<p style="color:red; font-size:10px">A senha deve ter mais de 8 caracteres</p>`;
+      senhaValida = false;
+
+    } else if (senha == senha.toLowerCase()) {
+      div_msg_senha.innerHTML = `<p style="color:red; font-size:10px">A senha deve ter ao menos uma letra maiúscula</p>`;
+
+      senhaValida = false;
+    }
+    else {
+      div_msg_senha.innerHTML = ``;
+    }
+
+    // validar confirmacao de senha 
+    if (confirmacao != senha || confirmacao.length == 0) {
+      div_msg_confirmacao.innerHTML = `<p style="color:red; font-size:10px">As senhas não coincidem</p>`;
+      confirmacaoValida = false;
+    }
+    else {
+      div_msg_confirmacao.innerHTML = ``;
+    }
+
+    // verificar se todas validações passaram
+
+    if (codigoEmpresaValido && nomeValido && usernameValido && emailValido && senhaValida && confirmacaoValida) {
+      alert('Cadastro Validado com Sucesso!')
+      window.location = "login.html"
+
+    }
+
+  }
+  localStorage.setItem('senha', ipt_senha.value);
+
+</script>
