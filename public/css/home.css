@@ -64,6 +64,14 @@ header {
     font-size: 15px;
     cursor: pointer;
 }
+.btn-login-link {
+    text-decoration: none;
+    color: #000000;
+}
+.btn-start-link {
+    text-decoration: none;
+    color: #FFFFFF;
+}
 
 .btn-start {
     background-color: #000000;
