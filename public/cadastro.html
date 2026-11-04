@@ -76,12 +76,6 @@
         <div id="div_msg_nome"></div>
 
         <div class="campo">
-          <img src="assets/icons/icone_userkey.svg" alt="">
-          <input type="text" placeholder="Nome de usuário" id="ipt_username">
-        </div>
-        <div id="div_msg_username"></div>
-
-        <div class="campo">
           <img src="assets/icons/mail.svg" alt="">
           <input type="text" placeholder="seu@email.com" id="ipt_email">
         </div>
@@ -113,14 +107,13 @@
   function cadastrar() {
     let codigoEmpresa = ipt_codigo_empresa.value;
     let nome = ipt_nome.value;
-    let username = ipt_username.value
     let email = ipt_email.value;
     let senha = ipt_senha.value;
     let confirmacao = ipt_confirmacao.value;
 
     let codigoEmpresaValido = true;
     let nomeValido = true;
-    let usernameValido = true;
+  
     let emailValido = true;
     let senhaValida = true;
     let confirmacaoValida = true;
@@ -143,13 +136,6 @@
       div_msg_nome.innerHTML = ``;
     }
 
-    // validar username 
-    if (username.length == 0) {
-      div_msg_username.innerHTML = `<p style="color:red; font-size:10px">Digite um nome de usuário</p>`;
-      usernameValido = false;
-    } else {
-      div_msg_username.innerHTML = ``;
-    }
 
     // validar e-mail
     if (!email.includes('@') || !email.includes('.')) {
@@ -186,7 +172,7 @@
 
     // verificar se todas validações passaram
 
-    if (codigoEmpresaValido && nomeValido && usernameValido && emailValido && senhaValida && confirmacaoValida) {
+    if (codigoEmpresaValido && nomeValido && emailValido && senhaValida && confirmacaoValida) {
       alert('Cadastro Validado com Sucesso!')
       window.location = "login.html"
 
