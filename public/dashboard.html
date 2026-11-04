@@ -151,7 +151,7 @@
 
         <!-- Seção de locais com vazamentos em tempo real -->
         <div class="kpi_vazamentosAtuais">
-          <p class="titulo_kpi">Locais com Vazamento</p>
+          <p class="titulo_kpi" style="margin-bottom: -10px;">Locais com Vazamento</p>
           <p>Em tempo real</p>
           <div class="div_status">
             <div class="status_cabecalho">
@@ -391,9 +391,21 @@
               },
               padding: {
                 top: 10,
-                bottom: 20,
+                bottom: 5,
               },
             },
+            subtitle: {
+            display: true,
+            text: "Ano Atual (2026)",
+            color: "#164636",
+            font: {
+              size: 14,
+              weight: "normal",
+            },
+            padding: {
+              bottom: 5,
+            },
+          },
           },
           scales: {
             y: {
@@ -462,7 +474,7 @@
                 weight: "normal",
               },
               padding: {
-                bottom: 20,
+                bottom: 7,
               },
             },
           },
