@@ -18,8 +18,8 @@ var app = express();
 var usuarioRouter = require("./src/routes/usuarios");
 var empresasRouter = require("./src/routes/empresas");
 var usinasRouter = require("./src/routes/usinas");
-var sensoresRouter = require("./src/routes/sensores");
-var vazamentosRouter = require("./src/routes/vazamentos");
+// var sensoresRouter = require("./src/routes/sensores");
+// var vazamentosRouter = require("./src/routes/vazamentos");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -30,8 +30,8 @@ app.use(cors());
 app.use("/usuarios", usuarioRouter);
 app.use("/empresas", empresasRouter);
 app.use("/usinas", usinasRouter);
-app.use("/sensores", sensoresRouter);
-app.use("/vazamentos", vazamentosRouter);
+// app.use("/sensores", sensoresRouter);
+// app.use("/vazamentos", vazamentosRouter);
 
 app.listen(PORTA_APP, function () {
     console.log(`
