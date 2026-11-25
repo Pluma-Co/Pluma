@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="../css/dashboard.css" />
 </head>
 
-<body>
+<body onload="atualizarKpis()">
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation"></script>
@@ -81,20 +81,20 @@
 
         <div id="div_kpis">
             <div class="div_kpi">
-                <p class="titulo_kpi">Sensores em Alerta Crítico</p>
-                <p id="valor_gasPerdido" class="dado_kpi">9</p>
+                <p class="titulo_kpi">Sensores em Alerta<br><span style="color: red;">Crítico</span></p>
+                <p id="sensores_criticos" class="dado_kpi">0</p>
             </div>
             <div class="div_kpi">
-                <p class="titulo_kpi">Sensores em Alerta Moderado</p>
-                <p id="valor_vazamentosTotais" class="dado_kpi">3</p>
+                <p class="titulo_kpi">Sensores em Alerta<br><span style="color: #FFCC00;">Moderado</span></p>
+                <p id="sensores_moderados" class="dado_kpi">1</p>
             </div>
             <div class="div_kpi">
-                <p class="titulo_kpi">Sensores em Alerta Leve</p>
-                <p id="valor_tempoVazamento" class="dado_kpi">3</p>
+                <p class="titulo_kpi">Sensores em Alerta<br><span style="color: #706EE7;">Leve</span></p>
+                <p id="sensores_leves" class="dado_kpi">1</p>
             </div>
             <div class="div_kpi">
-                <p class="titulo_kpi">Sensores Normais</p>
-                <p id="valor_mediaReparo" class="dado_kpi">8</p>
+                <p class="titulo_kpi">Sensores<br>Normais</p>
+                <p id="sensores_normais" class="dado_kpi">5</p>
             </div>
         </div>
         <div id="div_dashboard">
@@ -426,11 +426,40 @@
 </script>
 
 <script>
+
+    const sensores_criticos = document.getElementById("sensores_criticos");
+    const sensores_moderados = document.getElementById("sensores_moderados");
+    const sensores_leves = document.getElementById("sensores_leves");
+    const sensores_normais = document.getElementById("sensores_normais");
+
     const grafico_vazamentos = document.getElementById("grafico_vazamentos");
-    const grafico_vazamentoMensal = document.getElementById(
-        "grafico_vazamentoMensal",
-    );
+    const grafico_vazamentoMensal = document.getElementById("grafico_vazamentoMensal");
     const grafico_local = document.getElementById("grafico_local");
+
+    const quantidade_criticos = Number(sensores_criticos.textContent);
+    const quantidade_moderados = Number(sensores_moderados.textContent);
+    const quantidade_leves = Number(sensores_leves.textContent);
+    const quantidade_normais = Number(sensores_normais.textContent);
+
+    function atualizarKpis() {
+        if (quantidade_criticos > 0) {
+            sensores_criticos.style.color = 'red';
+        } else {
+            sensores_criticos.style.color = '#164636';
+        }
+
+        if (quantidade_moderados > 0) {
+            sensores_moderados.style.color = '#FFCC00';
+        } else {
+            sensores_moderados.style.color = '#164636';
+        }
+
+        if (quantidade_leves > 0) {
+            sensores_leves.style.color = '#706EE7';
+        } else {
+            sensores_leves.style.color = '#164636';
+        }
+    }
 
     new Chart(grafico_vazamentos, {
         type: "line",
@@ -466,7 +495,18 @@
         options: {
             responsive: true,
             maintainAspectRatio: false,
-            plugins: {
+            plugins:
+            {
+                legend: {
+                    display: true,
+                    position: "bottom",
+                    labels: {
+                        color: "#333333",
+                        padding: 20,
+                        usePointStyle: true,
+                        pointStyle: "circle"
+                    }
+                },
                 annotation: {
                     annotations: {
                         Leve: {
