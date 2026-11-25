@@ -124,7 +124,7 @@
   let listaEmpresasCadastradas = [];
 
   function cadastrar() {
-    aguardar();
+    // aguardar();
 
     //Recupere o valor da nova input pelo nome do id
     // Agora vá para o método fetch logo abaixo
@@ -135,22 +135,73 @@
     var codigoVar = ipt_codigo_empresa.value;
     var idEmpresaVincular
 
-    // Verificando se há algum campo em branco
-    if (
-      nomeVar == "" ||
-      emailVar == "" ||
-      senhaVar == "" ||
-      confirmacaoSenhaVar == "" ||
-      codigoVar == ""
-    ) {
-      cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "(Mensagem de erro para todos os campos em branco)";
+    let codigoEmpresaValido = true;
+    let nomeValido = true;
 
-      finalizarAguardar();
-      return false;
+    let emailValido = true;
+    let senhaValida = true;
+    let confirmacaoValida = true;
+
+
+    // Verificando se há algum campo em branco
+    // if (
+    //   nomeVar == "" ||
+    //   emailVar == "" ||
+    //   senhaVar == "" ||
+    //   confirmacaoSenhaVar == "" ||
+    //   codigoVar == ""
+    // ) {
+    //   cardErro.style.display = "block";
+    //   mensagem_erro.innerHTML =
+    //     "(Mensagem de erro para todos os campos em branco)";
+
+    //   finalizarAguardar();
+    //   return false;
+    // } else {
+    //   setInterval(sumirMensagem, 5000);
+    // }
+
+    // validar nome
+    if (nomeVar.length == 0) {
+      div_msg_nome.innerHTML = `<p style="color:red; font-size:10px">Digite seu nome completo</p>`;
+      nomeValido = false;
+    }
+    else {
+      div_msg_nome.innerHTML = ``;
+    }
+
+
+    // validar e-mail
+    if (!emailVar.includes('@') || !emailVar.includes('.')) {
+      div_msg_email.innerHTML = `<p style="color:red; font-size:10px">Digite um e-mail válido</p>`;
+
+      emailValido = false;
+
     } else {
-      setInterval(sumirMensagem, 5000);
+      div_msg_email.innerHTML = ``;
+    }
+
+    // validar senha
+    if (senhaVar.length <= 8) {
+      div_msg_senha.innerHTML = `<p style="color:red; font-size:10px">A senha deve ter mais de 8 caracteres</p>`;
+      senhaValida = false;
+
+    } else if (senhaVar == senhaVar.toLowerCase()) {
+      div_msg_senha.innerHTML = `<p style="color:red; font-size:10px">A senha deve ter ao menos uma letra maiúscula</p>`;
+
+      senhaValida = false;
+    }
+    else {
+      div_msg_senha.innerHTML = ``;
+    }
+
+    // validar confirmacao de senha 
+    if (confirmacaoSenhaVar != senhaVar || confirmacaoSenhaVar.length == 0) {
+      div_msg_confirmacao.innerHTML = `<p style="color:red; font-size:10px">As senhas não coincidem</p>`;
+      confirmacaoValida = false;
+    }
+    else {
+      div_msg_confirmacao.innerHTML = ``;
     }
 
     // Verificando se o código de ativação é de alguma empresa cadastrada
@@ -160,50 +211,54 @@
         console.log("Código de ativação válido.");
         break;
       } else {
+        codigoEmpresaValido = false;
         cardErro.style.display = "block";
         mensagem_erro.innerHTML = "(Mensagem de erro para código inválido)";
         finalizarAguardar();
       }
     }
 
-    // Enviando o valor da nova input
-    fetch("/usuarios/cadastrar", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        // crie um atributo que recebe o valor recuperado aqui
-        // Agora vá para o arquivo routes/usuario.js
-        nomeServer: nomeVar,
-        emailServer: emailVar,
-        senhaServer: senhaVar,
-        idEmpresaVincularServer: idEmpresaVincular
-      }),
-    })
-      .then(function (resposta) {
-        console.log("resposta: ", resposta);
+    if (codigoEmpresaValido && nomeValido && emailValido && senhaValida && confirmacaoValida) {
 
-        if (resposta.ok) {
-          cardErro.style.display = "block";
-
-          mensagem_erro.innerHTML =
-            "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
-
-          setTimeout(() => {
-            window.location = "login.html";
-          }, "2000");
-
-          limparFormulario();
-          finalizarAguardar();
-        } else {
-          throw "Houve um erro ao tentar realizar o cadastro!";
-        }
+      // Enviando o valor da nova input
+      fetch("/usuarios/cadastrar", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          // crie um atributo que recebe o valor recuperado aqui
+          // Agora vá para o arquivo routes/usuario.js
+          nomeServer: nomeVar,
+          emailServer: emailVar,
+          senhaServer: senhaVar,
+          idEmpresaVincularServer: idEmpresaVincular
+        }),
       })
-      .catch(function (resposta) {
-        console.log(`#ERRO: ${resposta}`);
-        finalizarAguardar();
-      });
+        .then(function (resposta) {
+          console.log("resposta: ", resposta);
+
+          if (resposta.ok) {
+            cardErro.style.display = "block";
+
+            mensagem_erro.innerHTML =
+              "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+            setTimeout(() => {
+              window.location = "login.html";
+            }, "2000");
+
+            limparFormulario();
+            finalizarAguardar();
+          } else {
+            throw "Houve um erro ao tentar realizar o cadastro!";
+          }
+        })
+        .catch(function (resposta) {
+          console.log(`#ERRO: ${resposta}`);
+          finalizarAguardar();
+        });
+    }
 
     return false;
   }
